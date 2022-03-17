@@ -1,0 +1,20 @@
+
+.mat-tab-label{
+    font-size: 10px !important;
+ } 
+ .t {
+    margin-top: 20px;
+    margin-right: 8px;
+  }
+
+ ::ng-deep .mat-tab-label .mat-tab-label-content {
+     padding-top: 0px;
+    font-size: xx-large;
+    color: rgb(0, 0, 0);
+}
+
+#con{ 
+    height: 100%;
+    min-height: 91vh; 
+    background-image: linear-gradient(0deg, #ffffce 0, #f2ffcf 10%, #e2ffcf 20%, #d3ffce 30%, #c3ffcc 40%, #b5f2c9 50%, #a8e5c5 60%, #9edac1 70%, #96d0bd 80%, #8fc7ba 90%, #8ac0b7 100%) ;
+}

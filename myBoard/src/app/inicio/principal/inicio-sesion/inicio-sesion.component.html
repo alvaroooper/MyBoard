@@ -1,0 +1,14 @@
+<div class="inicioS">
+  <div id= "tar" class="card border-dark">
+    <div class="card-header"> <br/> <h1 class="titulo"><b><u>Datos de usuario:</u></b></h1><br/> </div>
+    <div class="card-body text-info">
+      <br/>      
+        <form class="card-text" method="post" action="">
+          <input type="text" id="i1" class="form-control" [(ngModel)]="usr.nombre" name="nombre" id="nombre" placeholder="Nombre"/><br/>
+          <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" placeholder="Contraseña"/><br/><br/> <br/> 
+          <input type="button" id="b1" class="btn btn-primary" value="Iniciar Sesión" (click)="comprobarInicio ()"><br/><br/>
+          <input type="button" id="b2" class="btn btn-secondary" value="Registrarse" (click)="comprobarRegistro()"><br/><br/>                        
+        </form>
+    </div>
+  </div>
+</div> 

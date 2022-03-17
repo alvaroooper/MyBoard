@@ -1,0 +1,14 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 500px;
+} 
+.t{
+    font-size: x-large;
+}
+
+#tipo{
+    font-size: 80%;
+}
+

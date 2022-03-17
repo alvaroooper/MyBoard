@@ -1,0 +1,10 @@
+<section>
+    <h1><u>Planificaciones que pueden ayudarte:</u></h1>
+
+    <div class="contenedor" *ngFor="let planificacion of planificaciones.planificaciones">
+        <app-tarjeta [valor]="planificacion"></app-tarjeta>
+        <br/>
+    </div>
+    
+</section>
+<aside></aside>

@@ -1,0 +1,16 @@
+{
+    "planificaciones":  [ 
+        {   "id": 1,
+            "titulo": "Pomodoro",
+            "descripcion": "Se basa en usar un temporizador para dividir el tiempo en intervalos fijos, llamados pomodoros, de 25 minutos de actividad, seguidos de 5 minutos de descanso, con pausas más largas cada cuatro pomodoros."
+        },
+        {   "id": 2,
+            "titulo": "Por gustos",
+            "descripcion": "Consiste en empezar a hacer una tarea que te guste para calentar y una vez estés concentrado pasar a una que no te guste tanto."
+        },
+        {   "id": 3,
+            "titulo": "Por facilidad",
+            "descripcion": "Trata de empezar con algo que te sea fácil para pasar a lo difícil, pero no hagas todo lo sencillo al principio ya que si te saturas con lo difícil te será útil volver a lo sencillo."
+        } 
+    ]
+}

@@ -1,0 +1,631 @@
+{
+    "obtenido": [
+       "https://www.rutinaejercicios.com/",
+       "https://www.vitonica.com/entrenamiento/rutina-entrenamiento-casa-material-nivel-avanzado"
+    ],
+    "lugares": [
+       {
+          "Id_lugar": "1",
+          "lugar": "Gimnasio"
+       },
+       {
+          "Id_lugar": "2",
+          "lugar": "Casa"
+       }
+    ],
+    "niveles": [
+       {
+          "Id_nivel": "1",
+          "nivel": "Principiante"
+       },
+       {
+          "Id_nivel": "2",
+          "nivel": "Intermedio"
+       },
+       {
+          "Id_nivel": "3",
+          "nivel": "Avanzado"
+       }
+    ],
+    "rutinas": [
+       {
+          "Id_rutina": "1",
+          "Id_lugar": "1",
+          "Id_nivel": "1",
+          "rutina": "Gimnasio Princiapiante: General",
+          "dias": [
+             {
+                "dia": "1 - PECHO Y TRÍCEPS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Press de banca con mancuernas",
+                      "series": "4",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Press de banca inclinada",
+                      "series": "2",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Triceps en banco",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Extensión de tríceps recostado",
+                      "series": "3",
+                      "repeticiones": "10"
+                   }
+                ]
+             },
+             {
+                "dia": "2 - ESPALDA Y BÍCEPS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Dominadas de Agarre Ancho",
+                      "series": "4",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Remo sentado",
+                      "series": "3",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Remo horizontal a una mano",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Curl de pie con barra",
+                      "series": "3",
+                      "repeticiones": "10"
+                   }
+                ]
+             },
+             {
+                "dia": "3 - PIERNAS Y HOMBROS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Press de pierna a 45 grados",
+                      "series": "4",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Extensión de Pierna",
+                      "series": "3",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Curl de Pierna",
+                      "series": "3",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Press Militar",
+                      "series": "4",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Elevación lateral con mancuernas",
+                      "series": "3",
+                      "repeticiones": "10"
+                   }
+                ]
+             }
+          ]
+       },
+       {
+          "Id_rutina": "2",
+          "Id_lugar": "1",
+          "Id_nivel": "2",
+          "rutina": "Gimnasio Intermedia: General",
+          "dias": [
+             {
+                "dia": "1 - PECHO / TRÍCEPS / HOMBROS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Press de banca con mancuernas",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Press de banca con mancuernas inclinado",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Pecho en Paralelas",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Extensión de tríceps recostado",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Extensión de un brazo con mancuernas",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Extensión de tríceps",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Elevación Frontal de Barra con Peso",
+                      "series": "4",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Elevación lateral con mancuernas",
+                      "series": "4",
+                      "repeticiones": "12"
+                   }
+                ]
+             },
+             {
+                "dia": "2 - ESPALDA Y BÍCEPS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Dominadas de Agarre Ancho",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Jalón Polea Laterales",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Jalón Polea Lateral con Brazo Recto",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Apertura Inversa con Máquina",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Remo Vertical",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Curl con barra de pie",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Curl Inclinado con Mancuernas",
+                      "series": "3",
+                      "repeticiones": "10"
+                   }
+                ]
+             },
+             {
+                "dia": "3 - PIERNAS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Sentadilla",
+                      "series": "4",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Zancadas con mancuerna",
+                      "series": "3",
+                      "repeticiones": "8x2"
+                   },
+                   {
+                      "ejercicio": "Press de pierna a 45 grados",
+                      "series": "3",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Curl de Pierna",
+                      "series": "3",
+                      "repeticiones": "15"
+                   },
+                   {
+                      "ejercicio": "Extensión de Pierna",
+                      "series": "3",
+                      "repeticiones": "15"
+                   },
+                   {
+                      "ejercicio": "Elevación de Pantorrillas de Pie",
+                      "series": "5",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Elevación de Pantorrillas Sentado",
+                      "series": "5",
+                      "repeticiones": "15"
+                   }
+                ]
+             }
+          ]
+       },
+       {
+          "Id_rutina": "3",
+          "Id_lugar": "1",
+          "Id_nivel": "3",
+          "rutina": "Gimnasio Avanzada: General",
+          "dias": [
+             {
+                "dia": "1 - PECHO Y TRÍCEPS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Press de Banca con Barra con Mancuernas",
+                      "series": "4",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Press de Banca Inclinada",
+                      "series": "3",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Press de Banca Declinada",
+                      "series": "2",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Apertura con Mancuernas",
+                      "series": "2",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Press Frances",
+                      "series": "2",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Extensión de Tríceps",
+                      "series": "4",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Tríceps",
+                      "series": "3",
+                      "repeticiones": "10"
+                   }
+                ]
+             },
+             {
+                "dia": "2 - ESPALDA Y BÍCEPS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Dominadas",
+                      "series": "2",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Remo de Un Brazo con Mancuerna",
+                      "series": "3",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Remo Sentado",
+                      "series": "2",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Remo Inclinado con Barra",
+                      "series": "2",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Jalon polea frontal",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Curl de Pie con Barra con Mancuerna",
+                      "series": "3",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Curl en banco con Agarre Cerrado",
+                      "series": "3",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Curl Inclinado con Mancuerna",
+                      "series": "2",
+                      "repeticiones": "13"
+                   },
+                   {
+                      "ejercicio": "Curl Concentrado",
+                      "series": "2",
+                      "repeticiones": "10"
+                   }
+                ]
+             },
+             {
+                "dia": "3 - HOMBROS Y ANTEBRAZOS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Máquina de Press de Hombros",
+                      "series": "3",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Apertura Inversa con Mancuerna",
+                      "series": "2",
+                      "repeticiones": "9"
+                   },
+                   {
+                      "ejercicio": "Press Militar",
+                      "series": "4",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Elevación Lateral con Mancuernas",
+                      "series": "2",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Encogimiento de Hombros con Mancuernas",
+                      "series": "2",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Remo Vertical",
+                      "series": "2",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Curl de Muñeca de Pie",
+                      "series": "4",
+                      "repeticiones": "10"
+                   },
+                   {
+                      "ejercicio": "Curl de Muñeca con Barra con Mancuerna",
+                      "series": "4",
+                      "repeticiones": "10"
+                   }
+                ]
+             },
+             {
+                "dia": "4 - PIERNAS",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Sentadilla",
+                      "series": "5",
+                      "repeticiones": "8"
+                   },
+                   {
+                      "ejercicio": "Extensión de Pierna",
+                      "series": "3",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Curl de Pierna",
+                      "series": "3",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Elevación de Pantorrillas de Pie",
+                      "series": "4",
+                      "repeticiones": "12"
+                   },
+                   {
+                      "ejercicio": "Elevación de Pantorrillas Sentado",
+                      "series": "2",
+                      "repeticiones": "12"
+                   }
+                ]
+             }
+          ]
+       },
+       {
+          "Id_rutina": "4",
+          "Id_lugar": "2",
+          "Id_nivel": "1",
+          "rutina": "Casa Principiante: General",
+          "dias": {
+             "dia": "3 veces por semana",
+             "ejercicios": [
+                {
+                   "ejercicio": "Flexiones en el suelo",
+                   "series": "3",
+                   "repeticiones": "5"
+                },
+                {
+                   "ejercicio": "Flexiones en la pared",
+                   "series": "2",
+                   "repeticiones": "10"
+                },
+                {
+                   "ejercicio": "Sentadillas con los brazos hacia adelante",
+                   "series": "3",
+                   "repeticiones": "10"
+                },
+                {
+                   "ejercicio": "Subida de escalón",
+                   "series": "2",
+                   "repeticiones": "10x2"
+                },
+                {
+                   "ejercicio": "Puente para glúteos",
+                   "series": "3",
+                   "repeticiones": "10"
+                },
+                {
+                   "ejercicio": "Abdominales simples",
+                   "series": "3",
+                   "repeticiones": "10"
+                },
+                {
+                   "ejercicio": "Abdominales cruzados",
+                   "series": "3",
+                   "repeticiones": "10"
+                },
+                {
+                   "ejercicio": "Tijeras",
+                   "series": "2",
+                   "repeticiones": "10"
+                }
+             ]
+          }
+       },
+       {
+          "Id_rutina": "5",
+          "Id_lugar": "2",
+          "Id_nivel": "2",
+          "rutina": "Casa Intermedia: General",
+          "dias": {
+             "dia": "3 veces por semana",
+             "ejercicios": [
+                {
+                   "ejercicio": "Sentadilla con salto",
+                   "series": "4",
+                   "repeticiones": "15"
+                },
+                {
+                   "ejercicio": "Lagartijas",
+                   "series": "4",
+                   "repeticiones": "15"
+                },
+                {
+                   "ejercicio": "Fondos",
+                   "series": "4",
+                   "repeticiones": "15"
+                },
+                {
+                   "ejercicio": "Twist ruso",
+                   "series": "4",
+                   "repeticiones": "15"
+                },
+                {
+                   "ejercicio": "Burpee intermedio",
+                   "series": "4",
+                   "repeticiones": "15"
+                }
+             ]
+          }
+       },
+       {
+          "Id_rutina": "6",
+          "Id_lugar": "2",
+          "Id_nivel": "3",
+          "rutina": "Casa Avanzada: General",
+          "dias": [
+             {
+                "dia": "1 - TORSO",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Flexiones",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Remo invertido",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Pike push-ups",
+                      "series": "3",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Tiger push-ups",
+                      "series": "3",
+                      "repeticiones": "20"
+                   }
+                ]
+             },
+             {
+                "dia": "2 - PIERNA",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Sentadilla búlgara",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Sentadilla sissy",
+                      "series": "3",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Curl femoral deslizante",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Puente te gluteo a una pierna",
+                      "series": "3",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Body saw",
+                      "series": "4",
+                      "repeticiones": "20"
+                   }
+                ]
+             },
+             {
+                "dia": "3 - TORSO",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Pike push-ups",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Remo invertido",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Flexiones",
+                      "series": "3",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Tiger push-ups",
+                      "series": "3",
+                      "repeticiones": "20"
+                   }
+                ]
+             },
+             {
+                "dia": "4 - Pierna",
+                "ejercicios": [
+                   {
+                      "ejercicio": "Sentadilla sissy",
+                      "series": "3",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Sentadilla búlgara",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Curl femoral deslizante",
+                      "series": "3",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Puente de glúteo a una pierna",
+                      "series": "4",
+                      "repeticiones": "20"
+                   },
+                   {
+                      "ejercicio": "Body saw",
+                      "series": "3",
+                      "repeticiones": "20"
+                   }
+                ]
+             }
+          ]
+       }
+    ]
+ }

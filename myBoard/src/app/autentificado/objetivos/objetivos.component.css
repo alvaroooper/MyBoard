@@ -1,0 +1,15 @@
+.contenedor {
+    
+    max-width: 500px;
+    
+} 
+h1{
+    text-align: center;
+    padding: 40px;
+    font-size: 250%;
+}
+.i{
+    height: 200px;
+    font-size: xx-large;
+    font: 200%;
+}

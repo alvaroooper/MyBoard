@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ejercicio>
+    <obtenido>https://www.rutinaejercicios.com/</obtenido>
+    <obtenido>https://www.vitonica.com/entrenamiento/rutina-entrenamiento-casa-material-nivel-avanzado</obtenido>
+
+    <lugares>
+        <Id_lugar>1</Id_lugar>
+        <lugar>Gimnasio</lugar>
+    </lugares>
+    <lugares>
+        <Id_lugar>2</Id_lugar>
+        <lugar>Casa</lugar>
+    </lugares>
+
+    <niveles>
+        <Id_nivel>1</Id_nivel>
+        <nivel>Principiante</nivel>
+    </niveles>
+    <niveles>
+        <Id_nivel>2</Id_nivel>
+        <nivel>Intermedio</nivel>
+    </niveles>
+    <niveles>
+        <Id_nivel>3</Id_nivel>
+        <nivel>Avanzado</nivel>
+    </niveles>
+
+    <rutinas>
+        <Id_rutina>1</Id_rutina>
+        <Id_lugar>1</Id_lugar>
+        <Id_nivel>1</Id_nivel>
+        <rutina>Gimnasio Princiapiante: General</rutina>
+        <dias>
+            <dia>1 - PECHO Y TRÍCEPS</dia>
+            <ejercicios>
+                <ejercicio>Press de banca con mancuernas</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press de banca inclinada</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Triceps en banco</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de tríceps recostado</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+        <dias>
+            <dia>2 - ESPALDA Y BÍCEPS</dia>
+            <ejercicios>
+                <ejercicio>Dominadas de Agarre Ancho</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo sentado</ejercicio>
+                <series>3</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo horizontal a una mano</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de pie con barra</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+        <dias>
+            <dia>3 - PIERNAS Y HOMBROS</dia>
+            <ejercicios>
+                <ejercicio>Press de pierna a 45 grados</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de Pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de Pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press Militar</ejercicio>
+                <series>4</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación lateral con mancuernas</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+
+    <!-- -->
+    <rutinas>
+        <Id_rutina>2</Id_rutina>
+        <Id_lugar>1</Id_lugar>
+        <Id_nivel>2</Id_nivel>
+        <rutina>Gimnasio Intermedia: General</rutina>
+        <dias>
+            <dia>1 - PECHO / TRÍCEPS / HOMBROS</dia>
+            <ejercicios>
+                <ejercicio>Press de banca con mancuernas</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press de banca con mancuernas inclinado</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Pecho en Paralelas</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de tríceps recostado</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de un brazo con mancuernas</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de tríceps</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación Frontal de Barra con Peso</ejercicio>
+                <series>4</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación lateral con mancuernas</ejercicio>
+                <series>4</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+        </dias>
+
+        <dias>
+            <dia>2 - ESPALDA Y BÍCEPS</dia>
+            <ejercicios>
+                <ejercicio>Dominadas de Agarre Ancho</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Jalón Polea Laterales</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Jalón Polea Lateral con Brazo Recto</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Apertura Inversa con Máquina</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo Vertical</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl con barra de pie</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl Inclinado con Mancuernas</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+
+        <dias>
+            <dia>3 - PIERNAS</dia>
+            <ejercicios>
+                <ejercicio>Sentadilla</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Zancadas con mancuerna</ejercicio>
+                <series>3</series>
+                <repeticiones>8x2</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press de pierna a 45 grados</ejercicio>
+                <series>3</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de Pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de Pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación de Pantorrillas de Pie</ejercicio>
+                <series>5</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación de Pantorrillas Sentado</ejercicio>
+                <series>5</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+
+    <rutinas>
+        <Id_rutina>3</Id_rutina>
+        <Id_lugar>1</Id_lugar>
+        <Id_nivel>3</Id_nivel>
+        <rutina>Gimnasio Avanzada: General</rutina>
+        <dias>
+            <dia>1 - PECHO Y TRÍCEPS</dia>
+            <ejercicios>
+                <ejercicio>Press de Banca con Barra con Mancuernas</ejercicio>
+                <series>4</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press de Banca Inclinada</ejercicio>
+                <series>3</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press de Banca Declinada</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Apertura con Mancuernas</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press Frances</ejercicio>
+                <series>2</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de Tríceps</ejercicio>
+                <series>4</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Tríceps</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+
+        <dias>
+            <dia>2 - ESPALDA Y BÍCEPS</dia>
+            <ejercicios>
+                <ejercicio>Dominadas</ejercicio>
+                <series>2</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo de Un Brazo con Mancuerna</ejercicio>
+                <series>3</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo Sentado</ejercicio>
+                <series>2</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo Inclinado con Barra</ejercicio>
+                <series>2</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Jalon polea frontal</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de Pie con Barra con Mancuerna</ejercicio>
+                <series>3</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl en banco con Agarre Cerrado</ejercicio>
+                <series>3</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl Inclinado con Mancuerna</ejercicio>
+                <series>2</series>
+                <repeticiones>13</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl Concentrado</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+
+        <dias>
+            <dia>3 - HOMBROS Y ANTEBRAZOS</dia>
+            <ejercicios>
+                <ejercicio>Máquina de Press de Hombros</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Apertura Inversa con Mancuerna</ejercicio>
+                <series>2</series>
+                <repeticiones>9</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Press Militar</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación Lateral con Mancuernas</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Encogimiento de Hombros con Mancuernas</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo Vertical</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de Muñeca de Pie</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de Muñeca con Barra con Mancuerna</ejercicio>
+                <series>4</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+
+        <dias>
+            <dia>4 - PIERNAS</dia>
+            <ejercicios>
+                <ejercicio>Sentadilla</ejercicio>
+                <series>5</series>
+                <repeticiones>8</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Extensión de Pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl de Pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación de Pantorrillas de Pie</ejercicio>
+                <series>4</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Elevación de Pantorrillas Sentado</ejercicio>
+                <series>2</series>
+                <repeticiones>12</repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+
+    <rutinas>
+        <Id_rutina>4</Id_rutina>
+        <Id_lugar>2</Id_lugar>
+        <Id_nivel>1</Id_nivel>
+        <rutina>Casa Principiante: General</rutina>
+        <dias>
+            <dia>3 veces por semana</dia>
+            <ejercicios>
+                <ejercicio>Flexiones en el suelo</ejercicio>
+                <series>3</series>
+                <repeticiones>5</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Flexiones en la pared</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Sentadillas con los brazos hacia adelante</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Subida de escalón</ejercicio>
+                <series>2</series>
+                <repeticiones>10x2</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Puente para glúteos</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Abdominales simples</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Abdominales cruzados</ejercicio>
+                <series>3</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Tijeras</ejercicio>
+                <series>2</series>
+                <repeticiones>10</repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+
+    <rutinas>
+        <Id_rutina>5</Id_rutina>
+        <Id_lugar>2</Id_lugar>
+        <Id_nivel>2</Id_nivel>
+        <rutina>Casa Intermedia: General</rutina>       
+        <dias>
+            <dia>3 veces por semana</dia>
+            <ejercicios>
+                <ejercicio>Sentadilla con salto</ejercicio>
+                <series>4</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Lagartijas</ejercicio>
+                <series>4</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Fondos</ejercicio>
+                <series>4</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Twist ruso</ejercicio>
+                <series>4</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Burpee intermedio</ejercicio>
+                <series>4</series>
+                <repeticiones>15</repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+
+    <rutinas>
+        <Id_rutina>6</Id_rutina>
+        <Id_lugar>2</Id_lugar>
+        <Id_nivel>3</Id_nivel>
+        <rutina>Casa Avanzada: General</rutina>       
+        <dias>
+            <dia>1 - TORSO</dia>
+            <ejercicios>
+                <ejercicio>Flexiones</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo invertido</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Pike push-ups</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Tiger push-ups</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+        </dias>
+        <dias>
+            <dia>2 - PIERNA</dia>
+            <ejercicios>
+                <ejercicio>Sentadilla búlgara</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Sentadilla sissy</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl femoral deslizante</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Puente te gluteo a una pierna</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Body saw</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+        </dias>
+        <dias>
+            <dia>3 - TORSO</dia>
+            <ejercicios>
+                <ejercicio>Pike push-ups</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Remo invertido</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Flexiones</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Tiger push-ups</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+        </dias>
+        <dias>
+            <dia>4 - Pierna</dia>
+            <ejercicios>
+                <ejercicio>Sentadilla sissy</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Sentadilla búlgara</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Curl femoral deslizante</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Puente de glúteo a una pierna</ejercicio>
+                <series>4</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio>Body saw</ejercicio>
+                <series>3</series>
+                <repeticiones>20</repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+
+    <!-- 
+    <rutinas>
+        <Id_rutina></Id_rutina>
+        <Id_lugar></Id_lugar>
+        <Id_nivel></Id_nivel>
+        <rutina></rutina>       
+        <dias>
+            <dia></dia>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+            <ejercicios>
+                <ejercicio></ejercicio>
+                <series></series>
+                <repeticiones></repeticiones>
+            </ejercicios>
+        </dias>
+    </rutinas>
+    -->
+</ejercicio>

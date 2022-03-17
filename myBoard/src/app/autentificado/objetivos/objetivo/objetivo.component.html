@@ -1,0 +1,21 @@
+<mat-card class="tarjeta">
+    <mat-card-header>
+        <mat-card-title><p class="cabecera">{{valor["titulo"]}}</p></mat-card-title>
+    </mat-card-header>
+    <hr/>
+    <mat-card-content>
+        <p class="descripcion"><b>Tipo objetivo: </b>{{valor["tipo"]}}</p>
+    </mat-card-content> 
+    <hr/>
+    <mat-card-content>
+        <p class="descripcion"><b>Descripción: </b>{{valor["descripcion"]}}</p>
+    </mat-card-content>    
+    <hr/>
+    <mat-card-content>
+        <p class="descripcion"><b>Fecha límite: </b>{{valor["fecha"]}}</p>
+    </mat-card-content>  
+    <hr/>
+    <mat-card-content>
+        <button  class="btn btn-danger" id="{{valor['id']}}" (click)="recogerObjetivo()">BORRAR</button>
+    </mat-card-content>     
+</mat-card>

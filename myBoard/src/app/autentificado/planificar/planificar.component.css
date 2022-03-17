@@ -1,0 +1,11 @@
+section > h1{
+    font-size: 250%;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 40px;
+}
+.contenedor { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

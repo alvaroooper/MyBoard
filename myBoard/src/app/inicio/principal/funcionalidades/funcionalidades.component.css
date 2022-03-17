@@ -1,0 +1,18 @@
+.titu{
+    font-size: 110%;
+}
+
+#tar{
+    background-color: unset;
+    background-size: 400%;
+    max-width: 50%;
+    height: 450px;
+    margin-left: 25%;
+    border-radius: 3%;
+    /*box-shadow: 10px 10px 25px black;*/
+    box-shadow: 0 0 20px 10px;
+}
+
+.material-icons{
+    font-size: 125%;
+}

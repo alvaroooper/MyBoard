@@ -1,0 +1,26 @@
+.titulo{
+    font-size: 250%;
+}
+
+#b1, #b2{
+    width: 100%;
+    font-size: large;
+}
+
+#i1, #i2{
+    font-size: x-large;
+}
+.inicioS{
+    text-align: center;
+    
+}
+
+#tar{
+    background-color: unset;
+    background-size: 400%;
+    max-width: 50%;
+    height: 450px;
+    margin-left: 25%;
+    border-radius: 3%;
+    box-shadow: 0 0 20px 10px;
+}
