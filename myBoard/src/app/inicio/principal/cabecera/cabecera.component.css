@@ -10,3 +10,6 @@ header{
 header > h1{
     font-size: 300%;
 }
+img{
+    height: 125px;
+}
