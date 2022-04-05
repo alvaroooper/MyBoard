@@ -10,19 +10,20 @@ import Swal from 'sweetalert2';
 export class ObjetivoComponent implements OnInit {
 
   objetivos: any = []
+  idUsuario!: string;
   @Input() nombre: any;
   @Input() valor: any
   @Output() outputObjetivos = new EventEmitter()
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    
+    this.obtenerIdUsuario(this.nombre["nombre"])
   }
 
   //Obtiene los objetivos del usuario
-  selectObjetivo(nombre: string) {
+  selectObjetivo(idUsuario: string) {
     this.objetivos = []
-    this.appService.selectObjetivos(nombre)
+    this.appService.selectObjetivos(idUsuario)
     .subscribe((result:any) => {
       this.objetivos = result
       this.outputObjetivos.emit(this.objetivos)
@@ -32,16 +33,23 @@ export class ObjetivoComponent implements OnInit {
   borrarObjetivoArray ( arr: any, item:any ) {
     var i = arr.indexOf( item );
     arr.splice( i, 1 );
-    this.selectObjetivo(this.nombre["nombre"])
+    this.selectObjetivo(this.idUsuario)
   }
   
   //Recoge el id del objetivo a borrar y llama la la función de borrar
   recogerObjetivo(){
     let id = this.valor.id
     this.deleteObjetivo(id)
-    this.selectObjetivo(this.nombre["nombre"])
+    this.selectObjetivo(this.idUsuario)
   }
-
+  obtenerIdUsuario(nombre: string){
+    this.appService.selectIdUsuario(nombre)
+    .subscribe((result:any) => {
+      let id = result[0][0]
+      this.idUsuario=id
+      //this.selectObjetivo(this.idUsuario)
+    })
+  }
   //Pregunta si se está seguro de borrar y si se acepta se borra de la BD
   deleteObjetivo(id: any) {
     //Pregunta borrar
@@ -69,7 +77,7 @@ export class ObjetivoComponent implements OnInit {
             }).then((result) => {
               if (result.isConfirmed){
                 this.borrarObjetivoArray( this.objetivos, id )
-                this.selectObjetivo(this.nombre["nombre"])
+                this.selectObjetivo(this.idUsuario)
                 this.outputObjetivos.emit(this.objetivos)
               }
             })     

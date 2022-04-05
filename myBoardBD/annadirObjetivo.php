@@ -5,7 +5,7 @@
   $json = file_get_contents('php://input');
  
   $params = json_decode($json);
-  $usuario = $params[0];
+  $idUsuario = $params[0];
   $titulo = $params[1];
   $tipo = $params[2];
   $descripcion = $params[3];
@@ -14,8 +14,8 @@
   $con=retornarConexion();
   
 
-  mysqli_query($con," INSERT INTO objetivos(`id`, `usuario`, `titulo`, `tipo`, `descripcion`, `fecha`) VALUES 
-                   (NULL, '$usuario', '$titulo', '$tipo', '$descripcion', '$fecha')");
+  mysqli_query($con," INSERT INTO objetivos(`id`, `idUsuario`, `titulo`, `tipo`, `descripcion`, `fecha`) VALUES 
+                   (NULL, '$idUsuario', '$titulo', '$tipo', '$descripcion', '$fecha')");
   
   class Result {}
 

@@ -19,9 +19,12 @@ export class AppService {
   insertUsuario(articulo:any) {
     return this.http.post(`${this.url}annadirUsuario.php`, JSON.stringify(articulo));    
   }
+  selectIdUsuario(nombre: any){
+    return this.http.get(`${this.url}seleccionarIdUsuario.php?nombre=${nombre}`)
+  }
 
-  selectObjetivos(nombre: any) {
-    return this.http.get(`${this.url}selectObjetivos.php?nombre=${nombre}`);
+  selectObjetivos(idUsuario: any) {
+    return this.http.get(`${this.url}selectObjetivos.php?idUsuario=${idUsuario}`);
   }
   insertObjetivo(objetivo: any) {
     return this.http.post(`${this.url}annadirObjetivo.php`, JSON.stringify(objetivo));
@@ -29,4 +32,5 @@ export class AppService {
   deleteObjetivo(id: any){
     return this.http.get(`${this.url}eliminarObjetivo.php?id=${id}`)
   }
+
 }

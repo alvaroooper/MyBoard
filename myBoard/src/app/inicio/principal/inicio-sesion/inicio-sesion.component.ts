@@ -44,8 +44,8 @@ export class InicioSesionComponent implements OnInit {
     //Obtener datos del usuario con el nombre establecido
     this.appService.selectUsuario(nom).subscribe((datos:any) => {
       
-      let nombre = datos[0][0]
-      let contrasenna = datos[0][1]
+      let nombre = datos[0][1]
+      let contrasenna = datos[0][2]
 
       if (nombre == nom){
         if (contrasenna == con){  
@@ -78,8 +78,9 @@ export class InicioSesionComponent implements OnInit {
     let con = this.usr.contrasenna;
     //Obtener los datos de un usuario dado el nombre para ver si existe
     this.appService.selectUsuario(nom).subscribe((datos:any) => {
-        let nombre = datos[0][0]
-
+        let nombre = datos[0][1]
+        console.log(nombre)
+        console.log(nom)
         if (this.validarNombre(nom) == false){
           //Error si el nombre no cumple los requisitos de complejidad
           Swal.fire({

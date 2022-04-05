@@ -11,9 +11,9 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
         print "Fallo al conectar con la base de datos. ".$conexion->connect_error;
         //echo 0;
     }else{
-        $nombre = $_GET["nombre"];
+        $idUsuario = $_GET["idUsuario"];
         
-        $sql = 'SELECT * FROM objetivos WHERE usuario="'.$nombre.'"';
+        $sql = 'SELECT * FROM objetivos WHERE idUsuario="'.$idUsuario.'"';
         $resultados=mysqli_query($conexion,$sql) or die(mysqli_error());
         while ( $fila = mysqli_fetch_array($resultados, MYSQLI_ASSOC))
             {

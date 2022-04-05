@@ -11,7 +11,8 @@ export class FormularioComponent implements OnInit {
   titulo!: string;
   descripcion!: string;
   fecha!: any;
-  objetivos: any = []
+  objetivos: any = [];
+  idUsuario!: string;
   tipos = [
     {valor:'Sin especificar', muestraValor:'Sin especificar'},
     {valor:'Académico', muestraValor:'Academico'},
@@ -24,6 +25,7 @@ export class FormularioComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+    this.obtenerIdUsuario(this.nombre["nombre"])
   }
 
   //Obtener los Objetivos de la BD de un usuario
@@ -34,9 +36,21 @@ export class FormularioComponent implements OnInit {
       this.outputObjetivos.emit(this.objetivos)
     });
   }
+  //Obtener el id del usurario
+  obtenerIdUsuario(nombre: string){
+    this.appService.selectIdUsuario(nombre)
+    .subscribe((result:any) => {
+      
+      let id = result[0][0]
+      this.idUsuario=id
+      console.log(this.idUsuario)
+    })
+  }
   //Obtiene los datos del formulario y añade dichos datos a un array, enviándolo al componente padre
   recogerNuevoObjetivo(){
     let nombre = this.nombre["nombre"]
+    let idUsuario = this.idUsuario
+    console.log(idUsuario)
     let titulo = this.titulo
     let tipo = this.tipo
     let descripcion = this.descripcion
@@ -53,7 +67,8 @@ export class FormularioComponent implements OnInit {
     } else {
       fechaFin = this.fEspanna(fecha)
     }
-    let objetivo = [nombre, titulo, tipo, descripcion, fechaFin]
+    let objetivo = [idUsuario, titulo, tipo, descripcion, fechaFin]
+    console.log(objetivo)
     
     this.insertObjetivo(objetivo)
     this.objetivos.push(objetivo)
