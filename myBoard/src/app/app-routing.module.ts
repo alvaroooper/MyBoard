@@ -5,12 +5,21 @@ import { PrincipalComponent } from './inicio/principal/principal.component';
 import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
 import { AutentificadoComponent } from './autentificado/autentificado.component';
+import { PortadaComponent } from './inicio/portada/portada.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: PrincipalComponent
+  },
+  {
+    path: 'inicio',
+    component: PrincipalComponent
+  },
+  {
+    path: 'portada',
+    component: PortadaComponent
   },
   {
     path: 'autentificado/:nombre',

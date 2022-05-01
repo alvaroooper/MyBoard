@@ -15,7 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CabeceraComponent } from './inicio/principal/cabecera/cabecera.component';
+import { CabeceraComponent } from './inicio/cabecera/cabecera.component';
 import { PrincipalComponent } from './inicio/principal/principal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanificarComponent } from './autentificado/planificar/planificar.component';
