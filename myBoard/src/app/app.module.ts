@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 
 import { CabeceraComponent } from './inicio/cabecera/cabecera.component';
 import { PrincipalComponent } from './inicio/principal/principal.component';
+import { PortadaComponent } from './inicio/portada/portada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
@@ -35,11 +36,12 @@ import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabec
     AppComponent,
     CabeceraComponent,
     PrincipalComponent,
+    FuncionalidadesComponent,
+    InicioSesionComponent,
+    PortadaComponent,
     PlanificarComponent,
     ObjetivosComponent,
     AutentificadoComponent,
-    FuncionalidadesComponent,
-    InicioSesionComponent,
     TarjetaComponent,
     FormularioComponent,
     ObjetivoComponent,

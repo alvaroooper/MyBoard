@@ -16,8 +16,8 @@ export class AppService {
   selectUsuario(nombre: any) {
     return this.http.get(`${this.url}seleccionarUsuario.php?nombre=${nombre}`);
   }
-  insertUsuario(articulo:any) {
-    return this.http.post(`${this.url}annadirUsuario.php`, JSON.stringify(articulo));    
+  insertUsuario(usuario:any) {
+    return this.http.post(`${this.url}annadirUsuario.php`, JSON.stringify(usuario));    
   }
   selectIdUsuario(nombre: any){
     return this.http.get(`${this.url}seleccionarIdUsuario.php?nombre=${nombre}`)
