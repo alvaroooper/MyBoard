@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
 import { AutentificadoComponent } from './autentificado/autentificado.component';
-import { InicioSesionComponent } from './inicio/principal/inicio-sesion/inicio-sesion.component';
+import { InicioSesionComponent } from './inicio/inicio-sesion/inicio-sesion.component';
 import { TarjetaComponent } from './autentificado/planificar/tarjeta/tarjeta.component';
 import { FormularioComponent } from './autentificado/objetivos/formulario/formulario.component';
 import { ObjetivoComponent } from './autentificado/objetivos/objetivo/objetivo.component';

@@ -4,7 +4,7 @@ import { PortadaComponent } from './portada/portada.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PrincipalComponent } from './principal/principal.component';
 
-import { InicioSesionComponent } from './principal/inicio-sesion/inicio-sesion.component';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 
 
 

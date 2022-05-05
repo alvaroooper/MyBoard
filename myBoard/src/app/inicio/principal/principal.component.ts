@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  @Output() valid = new EventEmitter();
+
 
   constructor() { }
 

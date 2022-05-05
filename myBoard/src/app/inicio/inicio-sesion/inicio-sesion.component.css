@@ -1,0 +1,51 @@
+.titulo{
+    font-size: 250%;
+}
+
+#b1, #b2{
+    width: 100%;
+    font-size: large;
+}
+
+#i1, #i2{
+    font-size: x-large;
+}
+.inicioS{
+    text-align: center;
+    
+}
+
+#tar{
+    background-color: unset;
+    background-size: 400%;
+    max-width: 75%;
+    height: 500px;
+    margin-left: 12.5%;
+    border-radius: 3%;
+    box-shadow: 0 0 20px 10px;
+}
+#funcionalidades{
+    padding-top: 8%;
+    padding-bottom: 8%;
+    font-size:xx-large;
+    text-align: center;
+    border-right: black solid;
+}
+
+#inicioSesion{
+    padding-top: 150px;
+    text-align: center;
+}
+section{
+    background: url("/assets/img/escritorio.jpg") no-repeat; /*Foto de: "https://pixabay.com/es/photos/escritorio-de-oficina-minimalista-6180921/" */   
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%; 
+}
+
+@media screen and (max-width: 768px) {
+    #funcionalidades{
+        border-bottom: black solid;
+        border-right: none;
+    }
+}
