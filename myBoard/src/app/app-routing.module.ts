@@ -11,7 +11,7 @@ import { PortadaComponent } from './inicio/portada/portada.component';
 const routes: Routes = [
   {
     path: '',
-    component: PrincipalComponent
+    component: PortadaComponent
   },
   {
     path: 'inicio',

@@ -22,7 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
 import { AutentificadoComponent } from './autentificado/autentificado.component';
-import { FuncionalidadesComponent } from './inicio/principal/funcionalidades/funcionalidades.component';
 import { InicioSesionComponent } from './inicio/principal/inicio-sesion/inicio-sesion.component';
 import { TarjetaComponent } from './autentificado/planificar/tarjeta/tarjeta.component';
 import { FormularioComponent } from './autentificado/objetivos/formulario/formulario.component';
@@ -36,7 +35,6 @@ import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabec
     AppComponent,
     CabeceraComponent,
     PrincipalComponent,
-    FuncionalidadesComponent,
     InicioSesionComponent,
     PortadaComponent,
     PlanificarComponent,

@@ -7,13 +7,14 @@
 }
 
 #inicioSesion{
-    padding-top: 8%;
-    padding-bottom: 8%;
+    padding-top: 150px;
     text-align: center;
 }
-#con{
-    min-height: 89vh; 
-    background-image: linear-gradient(0deg, #ffffce 0, #f2ffcf 10%, #e2ffcf 20%, #d3ffce 30%, #c3ffcc 40%, #b5f2c9 50%, #a8e5c5 60%, #9edac1 70%, #96d0bd 80%, #8fc7ba 90%, #8ac0b7 100%) ;
+section{
+    background: url("/assets/img/escritorio.jpg") no-repeat; /*Foto de: "https://pixabay.com/es/photos/escritorio-de-oficina-minimalista-6180921/" */   
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%; 
 }
 
 @media screen and (max-width: 768px) {

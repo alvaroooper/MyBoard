@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PrincipalComponent } from './principal/principal.component';
-import { FuncionalidadesComponent } from './principal/funcionalidades/funcionalidades.component';
+
 import { InicioSesionComponent } from './principal/inicio-sesion/inicio-sesion.component';
 
 
@@ -13,7 +13,6 @@ import { InicioSesionComponent } from './principal/inicio-sesion/inicio-sesion.c
     PortadaComponent,
     CabeceraComponent,
     PrincipalComponent,
-    FuncionalidadesComponent,
     InicioSesionComponent
   ],
   imports: [
