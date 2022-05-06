@@ -5,6 +5,7 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ServiciosComponent } from './servicios/servicios.component';
 
 
 
@@ -13,7 +14,8 @@ import { RegistroComponent } from './registro/registro.component';
     PortadaComponent,
     CabeceraComponent,
     InicioSesionComponent,
-    RegistroComponent
+    RegistroComponent,
+    ServiciosComponent
   ],
   imports: [
     CommonModule

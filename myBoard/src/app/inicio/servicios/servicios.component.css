@@ -1,0 +1,22 @@
+article{
+    text-align: center;
+}
+article>h1{
+    font-size: xx-large;
+}
+h1{
+    text-align: center;
+}
+h3{
+    color: black;
+    text-align: center;
+}
+#tar{
+    height: 300px;
+    border-radius: 3%;
+    box-shadow: 3px 3px 4px 3px;
+    margin-bottom: 20px;
+}
+section{
+    margin-top: 5%;
+}

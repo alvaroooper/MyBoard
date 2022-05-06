@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     height: 100%;
-    min-height: 100vh; 
+    min-height: 100vh;
+     
     
 }
-
+body{
+    background: url("/assets/img/escritorio.jpg") no-repeat; /*Foto de: "https://pixabay.com/es/photos/escritorio-de-oficina-minimalista-6180921/" */   
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%; 
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,9 +1,4 @@
-section{
-    background: url("/assets/img/escritorio.jpg") no-repeat; /*Foto de: "https://pixabay.com/es/photos/escritorio-de-oficina-minimalista-6180921/" */   
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100%; 
-}
+
 article{
     font-size: 300%;
     line-height: 2;
