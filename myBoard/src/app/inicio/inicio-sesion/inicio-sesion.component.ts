@@ -39,14 +39,13 @@ export class InicioSesionComponent implements OnInit {
   comprobarInicio(){
     const md5 = new Md5();
     var nom = this.usr.nombre;
-    var con = md5.appendStr(this.usr.contrasenna).end();
+    var con = md5.appendStr(this.usr.contrasenna+nom+"camino").end();
     
     //Obtener datos del usuario con el nombre establecido
     this.appService.selectUsuario(nom).subscribe((datos:any) => {
       
       let nombre = datos[0][1]
-      let contrasenna = datos[0][2]
-
+      let contrasenna = datos[0][3]
       if (nombre == nom){
         if (contrasenna == con){  
           this.cambiarIniciar(nombre)
@@ -69,100 +68,6 @@ export class InicioSesionComponent implements OnInit {
         })
       }
     })
-  }
-
-
-  //Comprobar si los campos introducidos para registrarse son válidos
-  comprobarRegistro(){
-    let nom = this.usr.nombre;
-    let con = this.usr.contrasenna;
-    //Obtener los datos de un usuario dado el nombre para ver si existe
-    this.appService.selectUsuario(nom).subscribe((datos:any) => {
-        let nombre = datos[0][1]
-        console.log(nombre)
-        console.log(nom)
-        if (this.validarNombre(nom) == false){
-          //Error si el nombre no cumple los requisitos de complejidad
-          Swal.fire({
-            title: `Nombre no válido`,
-            text: 'El nombre debe tener entre 1 y 20 caracteres',
-            icon: 'error',
-            confirmButtonText: 'Aceptar'
-          })
-        } else {
-          if (nombre == nom){
-            //Error si el usuario ya existe
-            Swal.fire({
-              title: `El usuario ${nom} ya existe`,
-              text: 'Pruebe con otro nombre',
-              icon: 'error',
-              confirmButtonText: 'Aceptar'
-            })
-          } else {
-            if (this.validarContrasenna(con) == true) {
-              this.insertUsuario(this.usr)    
-            } else {
-              //Error si la contraseña no cumple los requisitos de complejidad
-              Swal.fire({
-                title: 'Contraseña no válida',
-                text: 'La contraseña debe tener entre 5 y 15 caracteres',
-                icon: 'error',
-                confirmButtonText: 'Aceptar'
-              })
-            }
-          }
-        }
-    }) 
-  }
-  //Comprobar los requisitos de complejidad de la contraseña
-  validarContrasenna(con: string){
-    let valida = false
-    if(con.length >= 5 && con.length <= 15){
-      valida = true
-    }
-    return valida;
-  }
-  //Comprobar los requisitos de complejidad del nombre
-  validarNombre(nom: string){
-    let valida = false
-    if(nom.length >=1 && nom.length <= 20){
-      valida = true
-    }
-    return valida;
-  }
-  //Confirmación de insertar e insertar el usuario en la BD
-  insertUsuario(user: any) {
-    //Mensaje de confirmación
-    Swal.fire({
-      title: '¿Estás seguro?',
-      text: `Esto creará el usuario ${user.nombre}`,
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Aceptar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        //Insertar el usuario en la BD
-        this.appService.insertUsuario(user).subscribe((datos:any) => {
-          if (datos['resultado']=='OK') {
-            //Mensaje de añadido con exito
-            Swal.fire({
-              title: `Añadido`,
-              text: `El usuario ${user.nombre} se ha añadido con éxito`,
-              icon: 'success',
-              confirmButtonText: 'Aceptar'
-            }).then((result) => {
-              if (result.isConfirmed){
-                //Ir a la página del usuario
-                this.cambiarIniciar(user.nombre)
-              }
-            })     
-          }
-        });
-      }
-    })  
   }
 
   //Acceder a la página del usuario

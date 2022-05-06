@@ -16,6 +16,9 @@ export class AppService {
   selectUsuario(nombre: any) {
     return this.http.get(`${this.url}seleccionarUsuario.php?nombre=${nombre}`);
   }
+  selectUsuarioCorreo(correo: any) {
+    return this.http.get(`${this.url}seleccionarUsuarioCorreo.php?correo=${correo}`);
+  }
   insertUsuario(usuario:any) {
     return this.http.post(`${this.url}annadirUsuario.php`, JSON.stringify(usuario));    
   }
@@ -32,5 +35,4 @@ export class AppService {
   deleteObjetivo(id: any){
     return this.http.get(`${this.url}eliminarObjetivo.php?id=${id}`)
   }
-
 }

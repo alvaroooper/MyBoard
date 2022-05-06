@@ -16,13 +16,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CabeceraComponent } from './inicio/cabecera/cabecera.component';
-import { PrincipalComponent } from './inicio/principal/principal.component';
 import { PortadaComponent } from './inicio/portada/portada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
 import { AutentificadoComponent } from './autentificado/autentificado.component';
 import { InicioSesionComponent } from './inicio/inicio-sesion/inicio-sesion.component';
+import { RegistroComponent } from './inicio/registro/registro.component';
 import { TarjetaComponent } from './autentificado/planificar/tarjeta/tarjeta.component';
 import { FormularioComponent } from './autentificado/objetivos/formulario/formulario.component';
 import { ObjetivoComponent } from './autentificado/objetivos/objetivo/objetivo.component';
@@ -34,8 +34,8 @@ import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabec
   declarations: [
     AppComponent,
     CabeceraComponent,
-    PrincipalComponent,
     InicioSesionComponent,
+    RegistroComponent,
     PortadaComponent,
     PlanificarComponent,
     ObjetivosComponent,

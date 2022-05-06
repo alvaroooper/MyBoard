@@ -1,18 +1,18 @@
-<br/>
+<section>
+<app-cabecera></app-cabecera>
   <div class="container-fluid" id="con">
     <div class="row">
       <div class="col-md-6" id="inicioSesion">
         <div class="inicioS">
           <div id= "tar" class="card border-dark">
-            <div class="card-header"> <br/> <h1 class="titulo"><b>Iniciar sesión:</b></h1><br/> </div>
-            <div class="card-body text-info">
-              <br/>      
+            <div class="card-header"> <br/> <h1 class="titulo"><b>Iniciar sesión</b></h1><br/> </div>
+            <div class="card-body text-info">  
                 <form class="card-text" method="post" action="">
                   <input type="text" id="i1" class="form-control" [(ngModel)]="usr.nombre" name="nombre" id="nombre" placeholder="Nombre"/><br/>
-                  <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" placeholder="Contraseña"/><br/><br/> <br/> 
+                  <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" placeholder="Contraseña"/><br/>
                   <input type="button" id="b1" class="btn btn-primary" value="Entrar" (click)="comprobarInicio ()"><br/><br/>
-                  <hr/><h3>¿No tienes cuenta?</h3>
-                  <input type="button" id="b2" class="btn btn-secondary" value="Registrarse" (click)="comprobarRegistro()"><br/><br/>                        
+                  <hr/><br/><h1><b>¿No tienes cuenta?</b></h1><br/>
+                  <input type="button" id="b2" class="btn btn-secondary" value="Crear cuenta" routerLink="/registro"><br/><br/>                        
                 </form>
             </div>
           </div>    
@@ -20,4 +20,4 @@
       </div> 
     </div>
   </div>
-
+</section>

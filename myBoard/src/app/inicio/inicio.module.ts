@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
-import { PrincipalComponent } from './principal/principal.component';
 
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 
@@ -12,8 +12,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
   declarations: [
     PortadaComponent,
     CabeceraComponent,
-    PrincipalComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    RegistroComponent
   ],
   imports: [
     CommonModule
