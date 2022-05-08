@@ -1,9 +1,7 @@
 article{
     text-align: center;
 }
-article>h1{
-    font-size: xx-large;
-}
+
 h1{
     text-align: center;
 }
@@ -19,4 +17,12 @@ h3{
 }
 section{
     margin-top: 5%;
+}
+#tarEntrar{
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 4px 3px;
+}
+
+#tarEntrar>h1{
+    font-size: xx-large;
 }

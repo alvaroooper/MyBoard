@@ -1,15 +1,15 @@
 <app-cabecera></app-cabecera>
 <div class="container-fluid" id="con">
   <div class="row">
-    <div class="col-md-6" id="inicioSesion">
+    <div class="col-lg-6" id="inicioSesion">
       <div class="inicioS">
         <div id= "tar" class="card border-dark">
           <div class="card-header"> <br/> <h1 class="titulo"><b>Crear cuenta</b></h1><br/> </div>
           <div class="card-body text-info">
               <form class="card-text" method="post" action="">
-                <input type="text" id="i1" class="form-control" [(ngModel)]="usr.nombre" name="nombre" id="nombre" placeholder="Nombre"/><br/>               
+                <input type="text" id="i1" class="form-control" [(ngModel)]="usr.nombre" name="nombre" id="nombre" placeholder="Nombre (1-20 caracteres)"/><br/>               
                 <input type="email" id="i2" class="form-control" [(ngModel)]="usr.correo" name="correo" id="contrasenna2" placeholder="Correo electrónico"/><br/>
-                <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" placeholder="Contraseña"/><br/>
+                <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" placeholder="Contraseña (5-15 caracteres)"/><br/>
                 <input type="password" id="i2" class="form-control" [(ngModel)]="comprobar.contrasenna" name="contrasenna2" id="contrasenna2" placeholder="Repita la Contraseña"/><br/>
                 <input type="button" id="b1" class="btn btn-primary" value="Registrarse" (click)="comprobarRegistro()"><br/><br/>
                 <hr/>

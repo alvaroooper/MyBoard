@@ -1,15 +1,38 @@
-
 article{
-    font-size: 300%;
-    line-height: 2;
-    padding-left: 85px;
+    text-align: center;
 }
-strong{
-    font-size: 200%;
+article>h1{
+    font-size: xx-large;
 }
-.titulo{
-    padding-left: -40%;
-    font-size: 225%;
+h1{
+    text-align: center;
+}
+h3{
+    color: black;
+    text-align: center;
+}
+#tar{
+    height: 260px;
+    border-radius: 3%;
+    box-shadow: 3px 3px 4px 3px;
+    margin-bottom: 20px;
+}
+#tarEntrar{
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 4px 3px;
+}
+section{
+    margin-top: 10%;
+}
+#titulo{
+    margin-top: 10px;
     font-family:'Courier New', Courier, monospace;
-    color: rgb(0, 0, 0);
+    font-size: 235%;
+}
+#iOb{
+    margin-left: 35px;
+}
+#links{
+    text-decoration: none;
+    
 }
