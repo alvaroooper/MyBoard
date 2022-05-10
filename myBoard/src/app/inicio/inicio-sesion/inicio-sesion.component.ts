@@ -22,18 +22,6 @@ export class InicioSesionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  //Obtener todos los usuarios
-  selectTodos() {
-    this.appService.selectTodos()
-    .subscribe((result:any) => this.usuarios = result);
-  }
-
-  //Obtener datos de un usuario dado un nombre
-  selectUsuario(nombre: string) {
-    this.appService.selectUsuario(nombre)
-    .subscribe((result:any) => this.usuarios = result);
-  }
   
   //Comprobar que los datos para iniciar sesión son correctos
   comprobarInicio(){

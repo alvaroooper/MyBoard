@@ -43,7 +43,6 @@ export class RegistroComponent implements OnInit {
             confirmButtonText: 'Aceptar'
           })
         } else {
-          
           if (nombre == nom){ //Comprobar si exite el nombre
             Swal.fire({
               title: `El usuario ${nom} ya existe`,
@@ -90,8 +89,7 @@ export class RegistroComponent implements OnInit {
                     } 
                   }
                 }
-              })
-                
+              })        
             }    
           }
         }

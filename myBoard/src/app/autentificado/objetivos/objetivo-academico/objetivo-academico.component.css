@@ -1,0 +1,12 @@
+.descripcion{
+    font-size: 125%;
+}
+.cabecera{
+    font-size: 125%;
+}
+.tarjeta{
+    color: rgb(233, 222, 178);
+    background: url("../../../../assets/img/pizarra.jpg") no-repeat; background-size: 130%;
+    box-shadow: 0px 15px 20px black;
+    border: 1px black solid;
+}

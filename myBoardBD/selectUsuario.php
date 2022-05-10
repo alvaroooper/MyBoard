@@ -5,11 +5,11 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 
-    $conexion = mysqli_connect("localhost", "root", "", "myboard");
+require("conexion.php");
+$conexion=retornarConexion();
 
     if($conexion->connect_error){
         print "Fallo al conectar con la base de datos. ".$conexion->connect_error;
-        //echo 0;
     }else{
         $nombre = $_GET["nombre"];
         

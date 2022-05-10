@@ -1,21 +1,10 @@
 <app-cabecera-usuario [valor]="user"></app-cabecera-usuario>
 
 <section>
+  <app-objetivos [valor]="user"></app-objetivos>
+
   <div class="container-fluid" id="con">
-    <mat-tab-group mat-align-tabs="center" class="t">
-      <mat-tab label="Objetivos">
-        <div class="planificar">
-          <app-objetivos [valor]="user"></app-objetivos>
-            
-        </div>
-      </mat-tab>
-      
-      <mat-tab label="Planificar">
-        <div class="datos">
-          <app-planificar></app-planificar>
-        </div>
-      </mat-tab>
-    </mat-tab-group>
+    
   </div>
     
 </section>

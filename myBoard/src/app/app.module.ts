@@ -28,6 +28,7 @@ import { TarjetaComponent } from './autentificado/planificar/tarjeta/tarjeta.com
 import { FormularioComponent } from './autentificado/objetivos/formulario/formulario.component';
 import { ObjetivoComponent } from './autentificado/objetivos/objetivo/objetivo.component';
 import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabecera-usuario.component';
+import { ObjetivoAcademicoComponent } from './autentificado/objetivos/objetivo-academico/objetivo-academico.component';
 
 
 
@@ -46,6 +47,7 @@ import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabec
     FormularioComponent,
     ObjetivoComponent,
     CabeceraUsuarioComponent,
+    ObjetivoAcademicoComponent,
     
   ],
   imports: [
