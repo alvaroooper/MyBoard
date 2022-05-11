@@ -1,23 +1,30 @@
-<div class="contenedor">
-    <mat-form-field class="t">
-        <input matInput [(ngModel)]="titulo" type="text" class="t" maxlength="21" placeholder="Título">
-    </mat-form-field>
+
+ <div id= "tar" class="card border-dark">
+    <div class="card-header"><h1 id="annadir"><u>Añadir Objetivo:</u></h1></div>
+    <div class="card-body text-info">  
+        <div class="contenedor">
+            <mat-form-field class="t">
+                <input matInput [(ngModel)]="titulo" type="text" class="t" maxlength="21" placeholder="Título">
+            </mat-form-field>
+                
+            <mat-form-field class="t">
+                <mat-select placeholder="Ttipo de objetivo" [(ngModel)]="tipo" >
+                    <mat-option id="tipo" *ngFor="let tip of tipos" [value]="tip.valor">
+                        {{tip.muestraValor}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         
-    <mat-form-field class="t">
-        <mat-select placeholder="Ttipo de objetivo" [(ngModel)]="tipo" >
-            <mat-option id="tipo" *ngFor="let tip of tipos" [value]="tip.valor">
-                {{tip.muestraValor}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <mat-form-field class="t">
-        <input matInput [(ngModel)]="descripcion" type="text" maxlength="21" placeholder="Descripción breve">
-    </mat-form-field>
-
-    <mat-form-field class="t">
-        <input matInput [(ngModel)]="fecha" type="date" placeholder="Fecha límite">
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" (click)="recogerNuevoObjetivo()" class="t">Añadir Objetivo</button>
-</div>
+            <mat-form-field class="t">
+                <input matInput [(ngModel)]="descripcion" type="text" maxlength="21" placeholder="Descripción breve">
+            </mat-form-field>
+        
+            <mat-form-field class="t">
+                <input id="fec" matInput [(ngModel)]="fecha" type="date" placeholder="Fecha límite">
+            </mat-form-field>
+        
+            <button mat-raised-button color="primary" (click)="recogerNuevoObjetivo()"  class="bot">Añadir Objetivo</button>
+        </div>
+    </div>
+  </div>   
+  

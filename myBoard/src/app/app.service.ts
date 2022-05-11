@@ -49,6 +49,9 @@ export class AppService {
   selectObjetivosFisicos(idUsuario: any) {
     return this.http.get(`${this.url}selectObjetivosFisicos.php?idUsuario=${idUsuario}`);
   }
+  selectObjetivosCompletados(idUsuario: any) {
+    return this.http.get(`${this.url}selectObjetivosCompletados.php?idUsuario=${idUsuario}`);
+  }
   /*Insertar Objetivos*/
   insertObjetivo(objetivo: any) {
     return this.http.post(`${this.url}annadirObjetivo.php`, JSON.stringify(objetivo));
@@ -65,5 +68,8 @@ export class AppService {
   /*Eliminar Objetivos*/
   deleteObjetivo(id: any){
     return this.http.get(`${this.url}eliminarObjetivo.php?id=${id}`)
+  }
+  completeObjetivo(id: any){
+    return this.http.get(`${this.url}completarObjetivo.php?id=${id}`)
   }
 }

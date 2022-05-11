@@ -29,6 +29,9 @@ import { FormularioComponent } from './autentificado/objetivos/formulario/formul
 import { ObjetivoComponent } from './autentificado/objetivos/objetivo/objetivo.component';
 import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabecera-usuario.component';
 import { ObjetivoAcademicoComponent } from './autentificado/objetivos/objetivo-academico/objetivo-academico.component';
+import { ObjetivoPersonalComponent } from './autentificado/objetivos/objetivo-personal/objetivo-personal.component';
+import { ObjetivoFisicoComponent } from './autentificado/objetivos/objetivo-fisico/objetivo-fisico.component';
+import { ObjetivoCompletadoComponent } from './autentificado/objetivos/objetivo-completado/objetivo-completado.component';
 
 
 
@@ -48,6 +51,9 @@ import { ObjetivoAcademicoComponent } from './autentificado/objetivos/objetivo-a
     ObjetivoComponent,
     CabeceraUsuarioComponent,
     ObjetivoAcademicoComponent,
+    ObjetivoPersonalComponent,
+    ObjetivoFisicoComponent,
+    ObjetivoCompletadoComponent,
     
   ],
   imports: [

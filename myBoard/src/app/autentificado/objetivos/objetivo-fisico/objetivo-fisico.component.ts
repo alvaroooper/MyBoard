@@ -2,59 +2,41 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 import Swal from 'sweetalert2';
 
+
 @Component({
-  selector: 'app-objetivo',
-  templateUrl: './objetivo.component.html',
-  styleUrls: ['./objetivo.component.css']
+  selector: 'app-objetivo-fisico',
+  templateUrl: './objetivo-fisico.component.html',
+  styleUrls: ['./objetivo-fisico.component.css']
 })
-export class ObjetivoComponent implements OnInit {
+export class ObjetivoFisicoComponent implements OnInit {
 
   objetivos: any = []
   idUsuario!: string;
   @Input() nombre: any;
-  @Input() valor: any
+  @Input() valor: any;
   @Output() outputObjetivos = new EventEmitter()
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
     this.obtenerIdUsuario(this.nombre["nombre"])
   }
-
-  //Obtiene los objetivos del usuario
-  selectObjetivo(idUsuario: string) {
-    this.objetivos = []
-    this.appService.selectObjetivos(idUsuario)
-    .subscribe((result:any) => {
-      this.objetivos = result
-      //this.outputObjetivos.emit(this.objetivos)
-    });
+  //Obtener el id del usuario actual
+  obtenerIdUsuario(nombre: string){
+    this.appService.selectIdUsuario(nombre).subscribe((result:any) => {
+      let id = result[0][0]
+      this.idUsuario=id
+    })
   }
-  //Elimina el objetivo seleccionado en el array
-  borrarObjetivoArray ( arr: any, item:any ) {
-    var i = arr.indexOf( item );
-    arr.splice( i, 1 );
-    this.selectObjetivo(this.idUsuario)
-  }
-  
-  //Recoge el id del objetivo a borrar y llama la la función de borrar
+ 
   recogerObjetivoAbandonar(){
     let id = this.valor.id
     this.abandonarObjetivo(id)
-    this.selectObjetivo(this.idUsuario)
   }
   recogerObjetivoCompletar(){
     let id = this.valor.id
     this.completarObjetivo(id)
-    this.selectObjetivo(this.idUsuario)
   }
-  obtenerIdUsuario(nombre: string){
-    this.appService.selectIdUsuario(nombre)
-    .subscribe((result:any) => {
-      let id = result[0][0]
-      this.idUsuario=id
-      //this.selectObjetivo(this.idUsuario)
-    })
-  }
+  
   //Pregunta si se está seguro de borrar y si se acepta se borra de la BD
   abandonarObjetivo(id: any) {
     //Pregunta borrar
@@ -128,4 +110,5 @@ export class ObjetivoComponent implements OnInit {
       }
     })   
   }
+
 }

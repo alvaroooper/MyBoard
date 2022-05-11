@@ -4,6 +4,18 @@
     </mat-card-header>
     <hr/>
     <mat-card-content>
+        <p class="descripcion"><b>Descripción: </b>{{valor["descripcion"]}}</p>
+    </mat-card-content>    
+    <hr/>
+    <mat-card-content>
+        <p class="descripcion"><b>Fecha límite: </b>{{valor["fecha"]}}</p>
+    </mat-card-content>  
+    <hr/>
+    <mat-card-content>
+        <p class="descripcion"><b>Rutina: </b> <button  class="btn btn-info" id="{{valor['id']}}"> Ver</button></p>
+    </mat-card-content>  
+    <hr/>
+    <mat-card-content>
         <button  class="btn btn-danger" id="{{valor['id']}}" (click)="recogerObjetivoAbandonar()">ABANDONAR</button>
         <button  class="btn btn-success" id="{{valor['id']}}" (click)="recogerObjetivoCompletar()">COMPLETAR</button>
     </mat-card-content>     

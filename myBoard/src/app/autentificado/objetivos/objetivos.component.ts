@@ -8,9 +8,11 @@ import { AppService } from 'src/app/app.service';
 })
 export class ObjetivosComponent implements OnInit {
   objetivos: any = []
+  objetivosTotales: any = []
   objetivosAcademicos: any = []
   objetivosPersonales: any = []
   objetivosFisicos: any = []
+  objetivosCompletados: any = []
 
   idUsuario!: string;
   @Input() valor: any;
@@ -20,28 +22,34 @@ export class ObjetivosComponent implements OnInit {
     let nombre = this.valor["nombre"]
     this.obtenerIdUsuario(nombre)
   }
-  //Obtener el id del usurario
+  //Obtener el id del usurario y cargar los objetivos que le corresponden
   obtenerIdUsuario(nombre: string){
-    this.appService.selectIdUsuario(nombre)
-    .subscribe((result:any) => {
-      
+    this.appService.selectIdUsuario(nombre).subscribe((result:any) => {
       let id = result[0][0]
       this.idUsuario=id
       console.log(this.idUsuario);
       this.selectObjetivos()
-      
     })
   }
+  //Guardar todos los tipos de objetivos
   selectObjetivos(){
     this.selectObjetivo(this.idUsuario)
+    this.selectObjetivosTotales(this.idUsuario)
     this.selectObjetivosAcademicos(this.idUsuario)
     this.selectObjetivosPersonales(this.idUsuario)
     this.selectObjetivosFisicos(this.idUsuario)
+    this.selectObjetivosCompletados(this.idUsuario)
   }
   //Obtener los objetivos de un usuario
   selectObjetivo(idUsuario: string) {
     this.appService.selectObjetivos(idUsuario).subscribe((result:any) => {
       this.objetivos = result
+    });
+  }
+  //Obtener los pbjetivos del usuario para ser mostrados
+  selectObjetivosTotales(idUsuario: string) {
+    this.appService.selectObjetivos(idUsuario).subscribe((result:any) => {
+      this.objetivosTotales = result
     });
   }
   //Obtener los objetivos Académicos de un usuario
@@ -62,13 +70,17 @@ export class ObjetivosComponent implements OnInit {
       this.objetivosFisicos = result
     });
   }
+  selectObjetivosCompletados(idUsuario: string) {
+    this.appService.selectObjetivosCompletados(idUsuario).subscribe((result:any) => {
+      this.objetivosCompletados = result
+    });
+  }
   
+  //Llamada desde el html para recargar los objetivos que aparecen
   obtenerObjetivos(objetivos: any){
     this.objetivos = objetivos
     this.selectObjetivos()
   }
-  obtenerObjetivosAcademicos(objetivosAcademicos: any){
-    this.objetivosAcademicos = objetivosAcademicos
-  }
+
  
 }
