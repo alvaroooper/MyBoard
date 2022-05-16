@@ -1,0 +1,15 @@
+.descripcion{
+    font-size: 125%;
+}
+.cabecera{
+    font-size: 125%;
+}
+.tarjeta{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 95%;
+    color: rgb(235, 235, 235);
+    background-color: rgb(51, 62, 78);
+    box-shadow: 3px 3px 4px 3px black;
+    border: 1px black solid;
+}

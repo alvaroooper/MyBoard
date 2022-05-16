@@ -16,12 +16,21 @@ export class FormularioComponent implements OnInit {
   /*objetivos: any = [];*/
   //Opciones de objetivos que aparecerán en la lista desplegable para crear objetivos
   tipos = [
-    {valor:'Sin especificar', muestraValor:'Sin especificar'},
+    {valor:'Sin especificar', muestraValor:'Seleccione'},
     {valor:'Academico', muestraValor:'Académico'},
     {valor:'Personal', muestraValor:'Personal'},
     {valor:'Fisico', muestraValor:'Físico'}
   ]
   tipo: string = this.tipos[0].valor;
+  metodos = [];
+  metodo!: string;
+  metodoDeId= [];
+  recompensas = [];
+  recompensa!: string
+  recompensaDeId= [];
+  rutinas = [];
+  rutina!: string;
+  rutinaDeId= [];
 
   @Input() nombre: any;
   @Output() outputObjetivos = new EventEmitter()
@@ -31,24 +40,129 @@ export class FormularioComponent implements OnInit {
     this.obtenerIdUsuario(this.nombre["nombre"])
   }
 
-  //Obtener los Objetivos de la BD de un usuario
-  /*
-  selectObjetivo(nombre: string) {
-    this.appService.selectObjetivos(nombre)
-    .subscribe((result:any) => {
-      this.objetivos = result
-      this.outputObjetivos.emit(this.objetivos)
-    });
-  }
-  */
   //Obtener el id del usurario
   obtenerIdUsuario(nombre: string){
     this.appService.selectIdUsuario(nombre).subscribe((result:any) => {  
       let id = result[0][0]
       this.idUsuario=id
+      this.obtenerAyudas()
     })
   }
 
+  //Llama a todos los métodod de obtener ayudas
+  obtenerAyudas(){
+    this.obtenerMetodos()
+    this.obtenerRecompensas()
+    this.obtenerRutinas()
+  }
+  //Obtiene los métodos
+  obtenerMetodos(){
+    this.appService.selectMetodos().subscribe((result:any) => {  
+      this.metodos = result
+    })
+  }
+  //Obtiene las recompensas
+  obtenerRecompensas(){
+    this.appService.selectRecompensas().subscribe((result:any) => {  
+      this.recompensas = result
+    })
+  }
+  //Obtiene las rutinas
+  obtenerRutinas(){
+    this.appService.selectRutinas().subscribe((result:any) => {  
+      this.rutinas = result
+    })
+  }
+
+  /**
+   * VISUALIZAR AYUDAS
+   */
+
+  //Obtener el id del metodo seleccionado
+  obtenerIdMetodo(){
+    let id = this.metodo
+    if(id == null){
+      Swal.fire({
+        title: 'Método no seleccionado',
+        text: 'Seleccione uno de la lista',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    } else {
+      this.seleccionarMetodoId(id)
+    }
+    
+  }
+  //Obtiene el metodo correspondiente a un ID
+  seleccionarMetodoId(id: any){
+    this.appService.selectMetodoId(id).subscribe((result:any) => {  
+      this.metodoDeId = result
+      Swal.fire({
+        title: this.metodoDeId[0][1],
+        text: this.metodoDeId[0][2],
+        icon: 'info',
+        confirmButtonText: 'Aceptar'
+      })
+      
+    })
+  }
+  //Obtener el id de la Recompensa seleccionado
+  obtenerIdRecompensa(){
+    let id = this.recompensa
+    if(id == null){
+      Swal.fire({
+        title: 'Recompensa no seleccionado',
+        text: 'Seleccione uno de la lista',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    } else {
+      this.seleccionarRecompensaId(id)
+    }
+  }
+  //Obtiene la Recompensa correspondiente a un ID
+  seleccionarRecompensaId(id: any){
+    this.appService.selectRecompensaId(id).subscribe((result:any) => {  
+      this.recompensaDeId = result
+      Swal.fire({
+        title: this.recompensaDeId[0][1],
+        text: this.recompensaDeId[0][2],
+        icon: 'info',
+        confirmButtonText: 'Aceptar'
+      }) 
+    })
+  }
+  //Obtener el id de la rutina seleccionado
+  obtenerIdRutina(){
+    let id = this.rutina
+    if(id == null){
+      Swal.fire({
+        title: 'Rutina no seleccionado',
+        text: 'Seleccione uno de la lista',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    } else {
+      this.seleccionarRutinaId(id)
+    }
+  }
+  //Obtiene la rutina correspondiente a un ID
+  seleccionarRutinaId(id: any){
+    this.appService.selectRutinaId(id).subscribe((result:any) => {  
+      this.rutinaDeId = result
+      Swal.fire({
+        title: this.rutinaDeId[0][1],
+        text: this.rutinaDeId[0][2],
+        icon: 'info',
+        confirmButtonText: 'Aceptar'
+      })
+    })
+  }
+
+  /**
+   * INSERTAR
+   */
+  
   //Obtiene los datos del formulario y añade dichos datos a un array, enviándolo al componente padre
   recogerNuevoObjetivo(){
     let idUsuario = this.idUsuario
@@ -57,6 +171,9 @@ export class FormularioComponent implements OnInit {
     let descripcion = this.descripcion
     let fecha = new Date(this.fecha)
     let fechaFin =""
+    let metodo = this.metodo
+    let recompensa = this.recompensa
+    let rutina = this.rutina
     if (titulo==null){
       titulo= "Sin título"
     }
@@ -69,18 +186,21 @@ export class FormularioComponent implements OnInit {
     } else {
       fechaFin = this.fEspanna(fecha)
     }
-    let objetivo = [idUsuario, titulo, descripcion, fechaFin] //Objeto con los datos introducidos
+    //Ararys con los datos correspondientes a cada tipo de objetivo
+    let objetivoA = [idUsuario, titulo, descripcion, fechaFin, metodo] 
+    let objetivoP = [idUsuario, titulo, descripcion, fechaFin, recompensa]
+    let objetivoF = [idUsuario, titulo, descripcion, fechaFin, rutina]
 
     //En función del tipo seleccionado llama a la función correspondiente de insertar objetivo
     switch(tipo){
       case "Academico":
-        this.insertObjetivoAcademico(objetivo);
+        this.insertObjetivoAcademico(objetivoA);
         break;
       case "Personal":
-        this.insertObjetivoPersonal(objetivo);
+        this.insertObjetivoPersonal(objetivoP);
         break;
       case "Fisico":
-        this.insertObjetivoFisico(objetivo);
+        this.insertObjetivoFisico(objetivoF);
         break;
       default:
         Swal.fire({
@@ -105,6 +225,7 @@ export class FormularioComponent implements OnInit {
 
   //Inserta un nuevo objetivo en la BD
   insertObjetivo(objetivo: any) {
+   
     this.appService.insertObjetivo(objetivo).subscribe((datos:any) => { 
       //this.selectObjetivo(objetivo[0]) 
       this.outputObjetivos.emit()
@@ -113,13 +234,33 @@ export class FormularioComponent implements OnInit {
 
   //Inserta un objetivo Académico en la BD
   insertObjetivoAcademico(objetivo: any) {
-    this.appService.insertObjetivoAcademico(objetivo).subscribe((datos:any) => { 
-      this.outputObjetivos.emit()
-    })  
+    if(objetivo[4] == null){
+      Swal.fire({
+        title: 'Método no seleccionado',
+        text: 'Seleccione uno de la lista',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    } else {
+      this.appService.insertObjetivoAcademico(objetivo).subscribe((datos:any) => { 
+        this.outputObjetivos.emit()
+      })  
+    }
+    
   }
 
   //Inserta un objetivo Personal en la BD
   insertObjetivoPersonal(objetivo: any) {
+    if(objetivo[4] == null){
+      Swal.fire({
+        title: 'Recompensa no seleccionada',
+        text: 'Seleccione una de la lista',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    } else {
+
+    }
     this.appService.insertObjetivoPersonal(objetivo).subscribe((datos:any) => { 
       this.outputObjetivos.emit()
     })  
@@ -127,8 +268,18 @@ export class FormularioComponent implements OnInit {
 
   //Inserta un objetivo Físico en la BD
   insertObjetivoFisico(objetivo: any) {
-    this.appService.insertObjetivoFisico(objetivo).subscribe((datos:any) => { 
-      this.outputObjetivos.emit() 
-    })  
+    if(objetivo[4] == null){
+      Swal.fire({
+        title: 'Rutina no seleccionada',
+        text: 'Seleccione uno de la lista',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    } else {
+      this.appService.insertObjetivoFisico(objetivo).subscribe((datos:any) => { 
+        this.outputObjetivos.emit() 
+      }) 
+    }
+     
   }
 }

@@ -9,12 +9,13 @@
   $titulo = $params[1];
   $descripcion = $params[2];
   $fecha = $params[3];
+  $metodo = $params[4];
   require("conexion.php");
   $con=retornarConexion();
   
 
   mysqli_query($con," INSERT INTO objetivos(`id`, `idUsuario`, `titulo`, `descripcion`, `fecha`, `idMet`) VALUES 
-                   (NULL, '$idUsuario', '$titulo', '$descripcion', '$fecha', 1)");
+                   (NULL, '$idUsuario', '$titulo', '$descripcion', '$fecha', '$metodo')");
   
   class Result {}
 

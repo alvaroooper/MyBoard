@@ -12,6 +12,7 @@ export class ObjetivoFisicoComponent implements OnInit {
 
   objetivos: any = []
   idUsuario!: string;
+  rutinaDeId= []
   @Input() nombre: any;
   @Input() valor: any;
   @Output() outputObjetivos = new EventEmitter()
@@ -28,15 +29,35 @@ export class ObjetivoFisicoComponent implements OnInit {
     })
   }
  
+  //Recoge el id del objetivo a borrar y llama la la función de borrar
   recogerObjetivoAbandonar(){
     let id = this.valor.id
     this.abandonarObjetivo(id)
   }
+  //Recoge el id del objetivo a borrar y llama la la función de completar
   recogerObjetivoCompletar(){
     let id = this.valor.id
     this.completarObjetivo(id)
   }
   
+ //Obtener el id de la rutina seleccionado
+ obtenerIdRutina(){
+  let id = this.valor["idRut"]
+  this.seleccionarRutinaId(id)
+}
+//Obtiene la rutina correspondiente a un ID
+seleccionarRutinaId(id: any){
+  this.appService.selectRutinaId(id).subscribe((result:any) => {  
+    this.rutinaDeId = result
+    Swal.fire({
+      title: this.rutinaDeId[0][1],
+      text: this.rutinaDeId[0][2],
+      icon: 'info',
+      confirmButtonText: 'Aceptar'
+    })
+  })
+}
+
   //Pregunta si se está seguro de borrar y si se acepta se borra de la BD
   abandonarObjetivo(id: any) {
     //Pregunta borrar

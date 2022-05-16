@@ -27,7 +27,6 @@ export class ObjetivosComponent implements OnInit {
     this.appService.selectIdUsuario(nombre).subscribe((result:any) => {
       let id = result[0][0]
       this.idUsuario=id
-      console.log(this.idUsuario);
       this.selectObjetivos()
     })
   }
@@ -46,7 +45,7 @@ export class ObjetivosComponent implements OnInit {
       this.objetivos = result
     });
   }
-  //Obtener los pbjetivos del usuario para ser mostrados
+  //Obtener los objetivos del usuario para ser mostrados
   selectObjetivosTotales(idUsuario: string) {
     this.appService.selectObjetivos(idUsuario).subscribe((result:any) => {
       this.objetivosTotales = result
@@ -70,6 +69,8 @@ export class ObjetivosComponent implements OnInit {
       this.objetivosFisicos = result
     });
   }
+
+  //Obtener los objetivos que ha completado el usuario
   selectObjetivosCompletados(idUsuario: string) {
     this.appService.selectObjetivosCompletados(idUsuario).subscribe((result:any) => {
       this.objetivosCompletados = result

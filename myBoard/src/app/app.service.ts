@@ -69,7 +69,33 @@ export class AppService {
   deleteObjetivo(id: any){
     return this.http.get(`${this.url}eliminarObjetivo.php?id=${id}`)
   }
+  /*Completar Objetivos*/
   completeObjetivo(id: any){
     return this.http.get(`${this.url}completarObjetivo.php?id=${id}`)
   }
+  
+   /**
+   * METODOS DE AYUDAS PARA OBJETIVOS
+   */
+  selectMetodos() {
+    return this.http.get(`${this.url}selectMetodos.php`);
+  }
+  selectRecompensas() {
+    return this.http.get(`${this.url}selectRecompensas.php`);
+  }
+  selectRutinas() {
+    return this.http.get(`${this.url}selectRutinas.php`);
+  }
+  
+  /*Seleccionar ayuda dado un ID */
+  selectMetodoId(id: any) {
+    return this.http.get(`${this.url}seleccionarMetodoId.php?id=${id}`);
+  }
+  selectRecompensaId(id: any) {
+    return this.http.get(`${this.url}seleccionarRecompensaId.php?id=${id}`);
+  }
+  selectRutinaId(id: any) {
+    return this.http.get(`${this.url}seleccionarRutinaId.php?id=${id}`);
+  }
+  
 }

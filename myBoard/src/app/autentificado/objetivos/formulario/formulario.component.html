@@ -1,18 +1,19 @@
 
  <div id= "tar" class="card border-dark">
-    <div class="card-header"><h1 id="annadir"><u>Añadir Objetivo:</u></h1></div>
+    <div class="card-header"><h1 id="annadir"><u>Añadir objetivo:</u></h1></div>
     <div class="card-body text-info">  
         <div class="contenedor">
+
             <mat-form-field class="t">
-                <input matInput [(ngModel)]="titulo" type="text" class="t" maxlength="21" placeholder="Título">
-            </mat-form-field>
-                
-            <mat-form-field class="t">
-                <mat-select placeholder="Ttipo de objetivo" [(ngModel)]="tipo" >
+                <mat-select placeholder="Tipo de objetivo" [(ngModel)]="tipo" >
                     <mat-option id="tipo" *ngFor="let tip of tipos" [value]="tip.valor">
                         {{tip.muestraValor}}
                     </mat-option>
                 </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="t">
+                <input matInput [(ngModel)]="titulo" type="text" class="t" maxlength="21" placeholder="Título">
             </mat-form-field>
         
             <mat-form-field class="t">
@@ -22,8 +23,50 @@
             <mat-form-field class="t">
                 <input id="fec" matInput [(ngModel)]="fecha" type="date" placeholder="Fecha límite">
             </mat-form-field>
-        
-            <button mat-raised-button color="primary" (click)="recogerNuevoObjetivo()"  class="bot">Añadir Objetivo</button>
+
+            <div *ngIf="tipo == 'Academico'">
+                <mat-form-field class="t" >
+                    <mat-select placeholder="Método" [(ngModel)]="metodo" >
+                        <mat-option id="tipo" *ngFor="let met of metodos" [value]="met['id']">
+                            {{met['nombre']}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br/>
+                <button mat-raised-button color="primary" class="bot" (click)="obtenerIdMetodo()">Ver metodo</button>
+                <hr/>
+            </div>
+            
+
+            <div *ngIf="tipo == 'Personal'">
+                <mat-form-field class="t" >
+                    <mat-select placeholder="Recompensa" [(ngModel)]="recompensa" >
+                        <mat-option id="tipo" *ngFor="let rec of recompensas" [value]="rec['id']">
+                            {{rec['nombre']}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br/>
+                <button mat-raised-button color="primary" class="bot" (click)="obtenerIdRecompensa()">Ver recompensa</button>
+                <hr/>
+            </div>
+            
+
+            <div *ngIf="tipo == 'Fisico'">
+                <mat-form-field class="t" >
+                    <mat-select placeholder="Rutina" [(ngModel)]="rutina" >
+                        <mat-option id="tipo" *ngFor="let rut of rutinas" [value]="rut['id']">
+                            {{rut['nombre']}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br/>
+                <button mat-raised-button color="primary" class="bot" (click)="obtenerIdRutina()">Ver rutina</button>
+                <hr/>
+            </div>
+            
+            
+            <button mat-raised-button color="primary" (click)="recogerNuevoObjetivo()"  class="bot">Añadir objetivo</button>
         </div>
     </div>
   </div>   

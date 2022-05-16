@@ -1,69 +1,70 @@
 <main class="container-fluid" id ="a">
     <div class="row"> 
-        <div class="col-md-4">
+        <div class="col-md-4" >
             <app-formulario (outputObjetivos)="selectObjetivos()" [nombre]="valor" ></app-formulario>
         </div>
 
-        <div class="col-8">
+        <div class="col-md-8 overflow-auto" id="obs">
             <h1><u>Objetivos actuales:</u></h1>  
+            
             <mat-tab-group mat-align-tabs="center" class="t" >
                 
                 <mat-tab label="Todos">
-                    <div class="planificar">
+                    <div class="tarjs ">
                       <div class="row" *ngIf="objetivosTotales.length != 0; else nohay"> 
                           <div class="col-xl-6" id="ob" *ngFor="let objetivo of objetivosTotales">
                               <app-objetivo (outputObjetivos)="obtenerObjetivos($event)" [valor]="objetivo" [nombre]="valor"></app-objetivo> 
                               <br/>
                           </div>
                       </div> 
-                      <ng-template #nohay><h1>No tienes objetivos</h1></ng-template>
+                      <ng-template #nohay><h1>No tienes objetivos pendientes.</h1></ng-template>
                     </div>
                   </mat-tab>
                 
                 <mat-tab label="Académicos">
-                  <div class="planificar">
+                  <div class="tarjs">
                     <div class="row" *ngIf="objetivosAcademicos.length != 0; else nohayAca"> 
                         <div class="col-xl-6" id="ob" *ngFor="let objetivo of objetivosAcademicos">
                             <app-objetivo-academico (outputObjetivos)="obtenerObjetivos($event)" [valor]="objetivo" [nombre]="valor"></app-objetivo-academico> 
                             <br/>
                         </div>
                     </div> 
-                    <ng-template #nohayAca><h1>No tienes objetivos Académicos</h1></ng-template>
+                    <ng-template #nohayAca><h1>No tienes objetivos académicos pendientes.</h1></ng-template>
                   </div>
                 </mat-tab>
                 
                 <mat-tab label="Personales">
-                    <div class="datos">
+                    <div class="tarjs">
                       <div class="row" *ngIf="objetivosPersonales.length != 0; else nohayPer"> 
                           <div class="col-xl-6" id="ob" *ngFor="let objetivo of objetivosPersonales">
                               <app-objetivo-personal  (outputObjetivos)="obtenerObjetivos($event)" [valor]="objetivo" [nombre]="valor"></app-objetivo-personal> 
                               <br/>
                           </div>
                       </div> 
-                      <ng-template #nohayPer><h1>No tienes objetivos Personales</h1></ng-template>
+                      <ng-template #nohayPer><h1>No tienes objetivos personales pendientes.</h1></ng-template>
                     </div>
                   </mat-tab>
       
                   <mat-tab label="Físicos">
-                      <div class="datos">
+                      <div class="tarjs">
                           <div class="row" *ngIf="objetivosFisicos.length != 0; else nohayFis"> 
                               <div class="col-xl-6" id="ob" *ngFor="let objetivo of objetivosFisicos">
                                   <app-objetivo-fisico  (outputObjetivos)="obtenerObjetivos($event)" [valor]="objetivo" [nombre]="valor"></app-objetivo-fisico> 
                                   <br/>
                               </div>
                           </div> 
-                          <ng-template #nohayFis><h1>No tienes objetivos Físicos</h1></ng-template>
+                          <ng-template #nohayFis><h1>No tienes objetivos físicos pendientes.</h1></ng-template>
                       </div>
                     </mat-tab>
-                    <mat-tab label="Compleatados">
-                        <div class="datos">
+                    <mat-tab label="Completados">
+                        <div class="tarjs">
                             <div class="row" *ngIf="objetivosCompletados.length != 0; else nohayCom"> 
                                 <div class="col-xl-6" id="ob" *ngFor="let objetivo of objetivosCompletados">
                                     <app-objetivo-completado  (outputObjetivos)="obtenerObjetivos($event)" [valor]="objetivo" [nombre]="valor"></app-objetivo-completado> 
                                     <br/>
                                 </div>
                             </div> 
-                            <ng-template #nohayCom><h1>No tienes objetivos Completados</h1></ng-template>
+                            <ng-template #nohayCom><h1>No has completado nigún objetivo.</h1></ng-template>
                         </div>
                       </mat-tab>
             </mat-tab-group>

@@ -11,13 +11,14 @@ export class ObjetivoAcademicoComponent implements OnInit {
 
   objetivos: any = []
   idUsuario!: string;
+  metodoDeId= [];
   @Input() nombre: any;
   @Input() valor: any;
   @Output() outputObjetivos = new EventEmitter()
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    this.obtenerIdUsuario(this.nombre["nombre"])
+    this.obtenerIdUsuario(this.nombre["nombre"]) 
   }
   //Obtener el id del usuario actual
   obtenerIdUsuario(nombre: string){
@@ -26,34 +27,39 @@ export class ObjetivoAcademicoComponent implements OnInit {
       this.idUsuario=id
     })
   }
-  /*
-  //Obtiene los objetivos académicos del usuario
-  selectObjetivo(idUsuario: string) {
-    this.objetivos = []
-    this.appService.selectObjetivosAcademicos(idUsuario).subscribe((result:any) => {
-      this.objetivos = result
-      //this.outputObjetivos.emit()
-    });
-  }
-  //Elimina el objetivo seleccionado en el array
-  
-  borrarObjetivoArray ( arr: any, item:any ) {
-    var i = arr.indexOf( item );
-    arr.splice( i, 1 );
-    this.selectObjetivo(this.idUsuario)
-  }
-  */
+
  
   //Recoge el id del objetivo a borrar y llama la la función de borrar
   recogerObjetivoAbandonar(){
     let id = this.valor.id
     this.abandonarObjetivo(id)
   }
+
+  //Recoge el id del objetivo a borrar y llama la la función de completar
   recogerObjetivoCompletar(){
     let id = this.valor.id
     this.completarObjetivo(id)
   }
   
+  //Obtener el id del metodo seleccionado
+  obtenerIdMetodo(){
+    let id = this.valor["idMet"]
+    this.seleccionarMetodoId(id)
+  }
+  //Obtiene el metodo correspondiente a un ID
+  seleccionarMetodoId(id: any){
+    this.appService.selectMetodoId(id).subscribe((result:any) => {  
+      this.metodoDeId = result
+      Swal.fire({
+        title: this.metodoDeId[0][1],
+        text: this.metodoDeId[0][2],
+        icon: 'info',
+        confirmButtonText: 'Aceptar'
+      })   
+    })
+  }
+ 
+
   //Pregunta si se está seguro de borrar y si se acepta se borra de la BD
   abandonarObjetivo(id: any) {
     //Pregunta borrar

@@ -11,6 +11,7 @@ export class ObjetivoPersonalComponent implements OnInit {
 
   objetivos: any = []
   idUsuario!: string;
+  recompensaDeId= []
   @Input() nombre: any;
   @Input() valor: any;
   @Output() outputObjetivos = new EventEmitter()
@@ -28,15 +29,36 @@ export class ObjetivoPersonalComponent implements OnInit {
     })
   }
 
+  //Recoge el id del objetivo a borrar y llama la la función de borrar
   recogerObjetivoAbandonar(){
     let id = this.valor.id
     this.abandonarObjetivo(id)
   }
+  //Recoge el id del objetivo a borrar y llama la la función de completar
   recogerObjetivoCompletar(){
     let id = this.valor.id
     this.completarObjetivo(id)
   }
   
+  //Obtener el id de la recompensa seleccionada
+  obtenerIdRecompensa(){
+    let id = this.valor["idRec"]
+    this.seleccionarRecompensaId(id)
+  }
+  //Obtiene la Recompensa correspondiente a un ID
+  seleccionarRecompensaId(id: any){
+    this.appService.selectRecompensaId(id).subscribe((result:any) => {  
+      this.recompensaDeId = result
+      console.log(this.recompensaDeId);
+      Swal.fire({
+        title: this.recompensaDeId[0][1],
+        text: this.recompensaDeId[0][2],
+        icon: 'info',
+        confirmButtonText: 'Aceptar'
+      }) 
+    })
+  }
+
   //Pregunta si se está seguro de borrar y si se acepta se borra de la BD
   abandonarObjetivo(id: any) {
     //Pregunta borrar

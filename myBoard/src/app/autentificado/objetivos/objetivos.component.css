@@ -1,8 +1,6 @@
-.contenedor {
-    
-    max-width: 500px;
-    
-} 
+.tarjs{
+    max-width: 98%;
+}
 h1{
     text-align: center;
     padding: 40px;
@@ -12,4 +10,8 @@ h1{
     height: 200px;
     font-size: xx-large;
     font: 200%;
+}
+#obs{
+    margin-top:1%;
+    max-height: 890px;
 }

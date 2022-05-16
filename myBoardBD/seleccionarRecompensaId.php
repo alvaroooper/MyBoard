@@ -5,11 +5,14 @@
   require("conexion.php");
   $con=retornarConexion();
 
-  $registros=mysqli_query($con,"select * from metodos");
-  $vec=[];  
-  while ($reg=mysqli_fetch_array($registros))  
+  
+  $registros=mysqli_query($con,'SELECT * FROM recompensas WHERE id="'.$_GET["id"].'"');
+    
+  if ($reg=mysqli_fetch_array($registros))  
   {
     $vec[]=$reg;
+  } else {
+    $vec=[""];
   }
   
   $cad=json_encode($vec);
