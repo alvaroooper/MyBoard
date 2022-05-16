@@ -36,7 +36,7 @@ export class InicioSesionComponent implements OnInit {
       let contrasenna = datos[0][3]
       if (nombre == nom){
         if (contrasenna == con){  
-          this.cambiarIniciar(nombre)
+          this.cambiarIniciar(datos[0])
         } else {
           //Mensaje de error si las contraseñas no coinciden
           Swal.fire({
@@ -58,10 +58,17 @@ export class InicioSesionComponent implements OnInit {
     })
   }
 
-  //Acceder a la página del usuario
-  cambiarIniciar(nombre: any){
+  //Acceder a la página del usuario o del admin
+  cambiarIniciar(datos: any){
     this.valido=true
-    this.router.navigate([`/autentificado/${nombre}`]) 
+    console.log(datos[4]);
+    if(datos[4]==0){
+      this.router.navigate([`/autentificado/${datos[1]}`]) 
+    } else {
+      this.router.navigate([`/administrar/${datos[1]}`])
+    }
+    
+    
   }
   //https://sweetalert2.github.io/
   //https://blog.endeos.com/demo/sweetalert/index.html

@@ -1,0 +1,24 @@
+<section>
+    <article>
+        <h1>Administrar Usuarios</h1>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <th>{{usuario["id"]}}</th>
+                    <td>{{usuario["nombre"]}}</td>
+                    <td>{{usuario["correo"]}}</td>
+                    <td><button  class="btn btn-danger btnAb" id="{{usuario['id']}}" (click)="eliminarUsuario(usuario['id'])">Eliminar</button> </td>
+                    <br/>
+                </tr>
+            </tbody>
+          </table>
+    </article>
+</section>

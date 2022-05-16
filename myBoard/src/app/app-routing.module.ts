@@ -6,9 +6,9 @@ import { PortadaComponent } from './inicio/portada/portada.component';
 import { InicioSesionComponent } from './inicio/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './inicio/registro/registro.component';
 import { ServiciosComponent } from './inicio/servicios/servicios.component';
-import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
 import { AutentificadoComponent } from './autentificado/autentificado.component';
+import { AdministrarComponent } from './admin/administrar/administrar.component';
 
 
 
@@ -38,17 +38,18 @@ const routes: Routes = [
     component: AutentificadoComponent
   },
   {
-    path:'planificar',
-    component:PlanificarComponent
-  },
-  {
     path:'objetivos',
     component:ObjetivosComponent
   },
   {
     path:'autentificado',
     component:AutentificadoComponent
+  },
+  {
+    path:'administrar/:nombre',
+    component: AdministrarComponent
   }
+
 ];
 
 @NgModule({

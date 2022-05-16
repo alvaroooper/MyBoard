@@ -19,12 +19,10 @@ import { CabeceraComponent } from './inicio/cabecera/cabecera.component';
 import { PortadaComponent } from './inicio/portada/portada.component';
 import { ServiciosComponent } from './inicio/servicios/servicios.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PlanificarComponent } from './autentificado/planificar/planificar.component';
 import { ObjetivosComponent } from './autentificado/objetivos/objetivos.component';
 import { AutentificadoComponent } from './autentificado/autentificado.component';
 import { InicioSesionComponent } from './inicio/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './inicio/registro/registro.component';
-import { TarjetaComponent } from './autentificado/planificar/tarjeta/tarjeta.component';
 import { FormularioComponent } from './autentificado/objetivos/formulario/formulario.component';
 import { ObjetivoComponent } from './autentificado/objetivos/objetivo/objetivo.component';
 import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabecera-usuario.component';
@@ -32,8 +30,7 @@ import { ObjetivoAcademicoComponent } from './autentificado/objetivos/objetivo-a
 import { ObjetivoPersonalComponent } from './autentificado/objetivos/objetivo-personal/objetivo-personal.component';
 import { ObjetivoFisicoComponent } from './autentificado/objetivos/objetivo-fisico/objetivo-fisico.component';
 import { ObjetivoCompletadoComponent } from './autentificado/objetivos/objetivo-completado/objetivo-completado.component';
-
-
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -43,10 +40,8 @@ import { ObjetivoCompletadoComponent } from './autentificado/objetivos/objetivo-
     RegistroComponent,
     PortadaComponent,
     ServiciosComponent,
-    PlanificarComponent,
     ObjetivosComponent,
     AutentificadoComponent,
-    TarjetaComponent,
     FormularioComponent,
     ObjetivoComponent,
     CabeceraUsuarioComponent,
@@ -71,6 +66,7 @@ import { ObjetivoCompletadoComponent } from './autentificado/objetivos/objetivo-
     MatDialogModule,
     MatTableModule,
     MatButtonModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

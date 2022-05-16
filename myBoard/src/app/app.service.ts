@@ -31,6 +31,9 @@ export class AppService {
   selectIdUsuario(nombre: any){
     return this.http.get(`${this.url}seleccionarIdUsuario.php?nombre=${nombre}`)
   }
+  selectTodosUsuarios() {
+    return this.http.get(`${this.url}seleccionarTodosUsuarios.php`);
+  }
 
   /**
    * METODOS DE OBJETIVOS
