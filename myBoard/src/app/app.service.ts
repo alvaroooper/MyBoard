@@ -34,6 +34,9 @@ export class AppService {
   selectTodosUsuarios() {
     return this.http.get(`${this.url}seleccionarTodosUsuarios.php`);
   }
+  eliminarUsuario(id: any) {
+    return this.http.get(`${this.url}eliminarUsuario.php?id=${id}`)
+  }
 
   /**
    * METODOS DE OBJETIVOS

@@ -214,10 +214,10 @@ export class FormularioComponent implements OnInit {
 
   //Recoge una fecha y devuelve un string con la fecha en formato español
   fEspanna(fecha: Date){
-    let dias = ['Lunes','Martes','Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+    let dias = ['Domingo','Lunes','Martes','Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     let meses =['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
-    let nomDiaSem = dias[fecha.getDay()-1]; //Menos uno para que el array empiece por lunes
+    let nomDiaSem = dias[fecha.getDay()]; //Menos uno para que el array empiece por lunes
     let nomMes = meses[fecha.getMonth()];
 
     return nomDiaSem + ", " + fecha.getDate() + " de " + nomMes + " de " + fecha.getFullYear();
