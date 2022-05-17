@@ -1,17 +1,17 @@
 <div id="auten">
   
   <aside #aside>
+    <button (click) = 'handleAside ()' class="btn btn-light btnAb"><b>&#8678; </b>Salir</button>
     <h1><b>Ajustes de usuario</b></h1>
+    
     <br/>
     <div id= "tar" class="card border-dark">
       <div class="card-header"><h1><u>Cambiar contraseña</u></h1></div>
       <div class="card-body text-info">  
           <div class="contenedor">
-  
               <mat-form-field class="t">
                   <input matInput [(ngModel)]="cambiarContrasenna1" type="password" placeholder="Nueva contraseña">
               </mat-form-field>
-          
               <mat-form-field class="t">
                   <input  matInput [(ngModel)]="cambiarContrasenna2" type="password" placeholder="Repita la contraseña">
               </mat-form-field>
@@ -22,7 +22,26 @@
           </div>
       </div>
     </div>   
+    <br/>
 
+    <div id= "tar" class="card border-dark">
+      <div class="card-header"><h1><u>Cambiar correo</u></h1></div>
+      <div class="card-body text-info">  
+          <div class="contenedor">
+              <mat-form-field class="t">
+                  <input matInput [(ngModel)]="correo" type="email" placeholder="Nuevo correo">
+              </mat-form-field>
+              <mat-form-field class="t">
+                <input  matInput [(ngModel)]="contrasennaActual" type="password" placeholder="Contraseña actual">
+            </mat-form-field>
+              <input type="button" id="b1" class="btn btn-primary" value="Cambiar" (click)="comprobarCorreo()">
+          </div>
+      </div>
+    </div>
+    <hr/>
+    <input type="button" id="salir" class="btn btn-primary" value="Cerrar Sesión" (click)="salir()">
+    <hr/>
+    <input type="button" id="salir" class="btn btn-danger" value="Eliminar Cuenta" (click)="idParaEliminar()">
   </aside>
   <app-cabecera-usuario [valor]="user"></app-cabecera-usuario>
   <div id="credenciales">

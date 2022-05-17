@@ -40,6 +40,9 @@ export class AppService {
   cambiarContrasenna(datos:any){
     return this.http.post(`${this.url}cambiarContrasenna.php`, JSON.stringify(datos));    
   }
+  cambiarCorreo(datos: any){
+    return this.http.post(`${this.url}cambiarCorreo.php`, JSON.stringify(datos));    
+  }
 
   /**
    * METODOS DE OBJETIVOS

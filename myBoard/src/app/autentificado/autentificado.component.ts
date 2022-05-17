@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import {Md5} from 'ts-md5/dist/md5';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autentificado',
@@ -16,10 +17,11 @@ export class AutentificadoComponent implements OnInit {
   contrasennaActual!: string
   cambiarContrasenna1!: string
   cambiarContrasenna2!: string
-  constructor(private route: ActivatedRoute, private appService: AppService) { }
+  correo!: string
+  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router) { }
   asideFlag:boolean=true;
-  // Declarar variables de componentes
-@ViewChild('aside') aside:any;
+  @ViewChild('aside') aside:any;
+
   ngOnInit(): void {
     //Obtener el nombre del usuario
     this.user = {
@@ -37,24 +39,22 @@ export class AutentificadoComponent implements OnInit {
   }
   //Función para mostrar barra lateral al pulsar en el usuario
   handleAside(){
-    console.log ('Me hicieron clic');
-    if(this.asideFlag){
-            // operación vewchild dom
-            
-    this.aside.nativeElement.style.transform = 'translate(0,0)';
-    this.aside.nativeElement.style.display = 'block';
-    
-    this.asideFlag = false;
+    if(this.asideFlag){     
+      // operación vewchild dom   
+      this.aside.nativeElement.style.transform = 'translate(0,0)';
+      this.aside.nativeElement.style.display = 'block';
+      this.asideFlag = false;
     }else{
-    this.aside.nativeElement.style.transform = 'translate(100%,0)';
-    this.aside.nativeElement.style.display = 'none';
-    this.asideFlag = true;
+      this.aside.nativeElement.style.transform = 'translate(100%,0)';
+      this.aside.nativeElement.style.display = 'none';
+      this.asideFlag = true;
     }
   }
+
+  //Comprobar que se cumplen los requistos para cambiar la contraseña
   comprobarContrasennas(){
     const md5 = new Md5();
     var conAct = md5.appendStr(this.contrasennaActual+this.user.nombre+"camino").end();
-    var conCamb = md5.appendStr(this.cambiarContrasenna1+this.user.nombre+"camino").end();
 
     if (this.validarContrasenna(this.cambiarContrasenna1) == false) { //Comprobar complejidad contraseña
       Swal.fire({
@@ -90,6 +90,50 @@ export class AutentificadoComponent implements OnInit {
     }
   }
 
+  //Comprobar que se cumplen los requistos para cambiar el correo
+  comprobarCorreo(){
+    const md5 = new Md5();
+    var conAct = md5.appendStr(this.contrasennaActual+this.user.nombre+"camino").end();
+
+    if (this.validarCorreo(this.correo) == false) { //Comprobar complejidad contraseña
+      Swal.fire({
+        title: 'Correo no válido',
+        text: 'El correo debe tener un "@" y un "." ',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })         
+    } else {
+      this.appService.selectUsuarioCorreo(this.correo).subscribe((datos:any) => {
+        let correo = datos[0][2]
+        if (correo == this.correo){ //Comprobar si existe el correo
+          Swal.fire({
+            title: `El correo ${this.correo} ya existe`,
+            text: 'Pruebe con otro correo',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        } else {
+
+          this.appService.selectUsuario(this.user.nombre).subscribe((datos:any) => {
+            let contrasenna = datos[0][3]
+              if (contrasenna == conAct){  
+                this.cambioCorreo(this.correo)
+              } else {
+                //Mensaje de error si las contraseñas no coinciden
+                Swal.fire({
+                  title: 'Contraseña actual incorrecta',
+                  text: 'Introduzca su contraseña actual',
+                  icon: 'error',
+                  confirmButtonText: 'Aceptar'
+                })
+              } 
+          })
+          
+        }
+      })
+    }
+  }
+
   //Comprobar los requisitos de complejidad de la contraseña
   validarContrasenna(con: string){
     let valida = false
@@ -109,17 +153,75 @@ export class AutentificadoComponent implements OnInit {
 
   //Cambiar contraseña
   cambioContrasenna(conCamb: any){
-    
     let cambCon = [this.idUsuario, this.user.nombre, conCamb]
-    console.log(cambCon);
     this.appService.cambiarContrasenna(cambCon).subscribe((datos:any) => { 
       Swal.fire({
-        title: 'Contraseña Cambiada',
+        title: 'Contraseña cambiada',
         icon: 'success',
         confirmButtonText: 'Aceptar'
       })
+    })
+  }
+
+  //Comprobar requisitos de complejidad del correo
+  validarCorreo(correo: any) {
+    var valido = /\S+@\S+\.\S+/;
+    return valido.test(correo);
+  }
+
+  //Cambiar correo
+  cambioCorreo(correo: any){
+    let cambCorr = [this.idUsuario, correo]
+    this.appService.cambiarCorreo(cambCorr).subscribe((datos:any) => { 
+      Swal.fire({
+        title: 'Correo cambiado',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      })
+    })
+  }
+
+  //Salir a la página principal
+  salir(){
+    this.router.navigate([`/portada`]) 
+  }
+
+  //Llama a eliminar con el id del usuario a eliminar
+  idParaEliminar(){
+    this.eliminarUsuario(this.idUsuario)
+  }
+
+  //Elimiar la cuenta
+  eliminarUsuario(id: any){
+    //Pregunta borrar
+    Swal.fire({
+      title: `¿Estás seguro?`,
+      text: `Esto eliminará la cuenta`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      backdrop: `rgba(255, 249, 83,0.1)`,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      //Si se acepta
+      if (result.isConfirmed) {
+        //Se elimina de la BD
+        this.appService.eliminarUsuario(id).subscribe((datos:any) => {
+          if (datos['resultado']=='OK') {
+            //Mostrar que se ha borrado
+            Swal.fire({
+              title: `Usuario eliminado`,
+              icon: 'success',
+              confirmButtonText: 'Aceptar'
+            }) .then(() => {
+              this.salir()
+            })
+          }
+        })
+      }
     }) 
-    
   }
 
 }
