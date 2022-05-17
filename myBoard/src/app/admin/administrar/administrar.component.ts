@@ -14,6 +14,7 @@ export class AdministrarComponent implements OnInit {
   verOb!: boolean
   idUsuario!: string
   constructor(private appService: AppService, private router: Router) { }
+  
 
   ngOnInit(): void {
     this.seleccionarTodosUsuarios()

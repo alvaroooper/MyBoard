@@ -1,10 +1,36 @@
 <div id="auten">
+  
+  <aside #aside>
+    <h1><b>Ajustes de usuario</b></h1>
+    <br/>
+    <div id= "tar" class="card border-dark">
+      <div class="card-header"><h1><u>Cambiar contraseña</u></h1></div>
+      <div class="card-body text-info">  
+          <div class="contenedor">
+  
+              <mat-form-field class="t">
+                  <input matInput [(ngModel)]="cambiarContrasenna1" type="password" placeholder="Nueva contraseña">
+              </mat-form-field>
+          
+              <mat-form-field class="t">
+                  <input  matInput [(ngModel)]="cambiarContrasenna2" type="password" placeholder="Repita la contraseña">
+              </mat-form-field>
+              <mat-form-field class="t">
+                <input  matInput [(ngModel)]="contrasennaActual" type="password" placeholder="Contraseña actual">
+            </mat-form-field>
+              <input type="button" id="b1" class="btn btn-primary" value="Cambiar" (click)="comprobarContrasennas()">
+          </div>
+      </div>
+    </div>   
+
+  </aside>
   <app-cabecera-usuario [valor]="user"></app-cabecera-usuario>
+  <div id="credenciales">
+    <button (click) = 'handleAside ()' class="btn btn-light btnAb">{{user.nombre}}</button>
+  </div>
+  <section>
+    <app-objetivos [valor]="user"></app-objetivos>
+  </section>
 
-<section>
-  <app-objetivos [valor]="user"></app-objetivos>
-
-
-</section>
 </div>
 

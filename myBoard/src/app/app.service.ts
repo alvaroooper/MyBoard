@@ -37,6 +37,9 @@ export class AppService {
   eliminarUsuario(id: any) {
     return this.http.get(`${this.url}eliminarUsuario.php?id=${id}`)
   }
+  cambiarContrasenna(datos:any){
+    return this.http.post(`${this.url}cambiarContrasenna.php`, JSON.stringify(datos));    
+  }
 
   /**
    * METODOS DE OBJETIVOS
@@ -79,6 +82,7 @@ export class AppService {
   completeObjetivo(id: any){
     return this.http.get(`${this.url}completarObjetivo.php?id=${id}`)
   }
+  
   
    /**
    * METODOS DE AYUDAS PARA OBJETIVOS
