@@ -6,6 +6,12 @@ import {Md5} from 'ts-md5/dist/md5';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 
+//formulario
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+//para hacer la llamada de subir
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-autentificado',
   templateUrl: './autentificado.component.html',
@@ -18,9 +24,16 @@ export class AutentificadoComponent implements OnInit {
   cambiarContrasenna1!: string
   cambiarContrasenna2!: string
   correo!: string
-  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router, private http: HttpClient) { }
   asideFlag:boolean=true;
   @ViewChild('aside') aside:any;
+
+    //url donde estan las fotos del servidor
+    urlFotos = 'http://localhost/sinestesia/contenido/fotos/';
+
+    //archivo
+    nombreArchivo = '';
+    foto: any
 
   ngOnInit(): void {
     //Obtener el nombre del usuario
@@ -222,6 +235,79 @@ export class AutentificadoComponent implements OnInit {
         })
       }
     }) 
+  }
+
+
+   //subirFoto
+
+  //subir la foto
+  myForm = new FormGroup({
+    file: new FormControl('', [Validators.required]),
+    fileSource: new FormControl('', [Validators.required])
+  });
+
+  onFileSelected(event: any) {
+    //archivo que recojo
+    const file: File = event.target.files[0];
+
+    if (file) {
+      //nombre del archivo
+      this.nombreArchivo = file.name;
+      //formato
+      const formData = new FormData();
+
+      formData.append("thumbnail", file);
+      //subir el archivo al php
+      const upload$ = this.http.post("http://localhost/myBoardBD/subirFotos.php", formData);
+
+      upload$.subscribe();
+    }
+  }
+  //falta el archivo
+  get f() {
+    return this.myForm.controls;
+  }
+  //cuando cambia el input del archivo
+  onFileChange(event: any) {
+
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.myForm.patchValue({
+        fileSource: file
+      });
+    }
+  }
+
+   //subir la foto
+   submit() {
+    const formData = new FormData();
+    formData.append('file', this.myForm.get('fileSource')?.value);
+
+    this.http.post('http://localhost/myBoardBD/subirFotos.php', formData)
+      .subscribe((datos: any) => {
+
+
+        if (datos['mensaje']) {
+
+          this.foto = datos['nombreCompleto']
+          let subFot = [this.idUsuario, this.foto]
+          this.appService.subirFotoBD(subFot).subscribe((datos:any) => { 
+            Swal.fire({
+              title: 'Se ha subido su fot de perfil',
+              icon: 'success',
+            })
+          })
+         
+
+        } else {
+
+          Swal.fire({
+            icon: 'error',
+            title: 'El archivo debe ser una imagen'
+          })
+        }
+
+      })
   }
 
 }

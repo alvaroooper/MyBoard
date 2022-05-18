@@ -43,6 +43,9 @@ export class AppService {
   cambiarCorreo(datos: any){
     return this.http.post(`${this.url}cambiarCorreo.php`, JSON.stringify(datos));    
   }
+  subirFotoBD(datos:any){
+    return this.http.post(`${this.url}subirFotoBD.php`, JSON.stringify(datos)); 
+  }
 
   /**
    * METODOS DE OBJETIVOS

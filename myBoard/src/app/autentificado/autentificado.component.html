@@ -3,7 +3,29 @@
   <aside #aside>
     <button (click) = 'handleAside ()' class="btn btn-light btnAb"><b>&#8678; </b>Salir</button>
     <h1><b>Ajustes de usuario</b></h1>
-    
+    <!---->
+
+
+    <br>
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+
+
+        <div class="form-group">
+            <h1>Subir foto de perfil</h1>
+            <br>
+            <input formControlName="file" id="file" type="file" class="form-control"
+                (change)="onFileChange($event)">
+            <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+                <div *ngIf="f['file'].errors && f['file'].errors['required']">Necesitas poner una imagen.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-xxl rounded-pill mt-5"
+            [disabled]="myForm.invalid"
+            type="submit">subir foto</button>
+    </form>
+    <!---->
     <br/>
     <div id= "tar" class="card border-dark">
       <div class="card-header"><h1><u>Cambiar contraseña</u></h1></div>

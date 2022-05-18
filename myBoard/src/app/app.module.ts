@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { ObjetivoPersonalComponent } from './autentificado/objetivos/objetivo-pe
 import { ObjetivoFisicoComponent } from './autentificado/objetivos/objetivo-fisico/objetivo-fisico.component';
 import { ObjetivoCompletadoComponent } from './autentificado/objetivos/objetivo-completado/objetivo-completado.component';
 import { AdminModule } from './admin/admin.module';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { AdminModule } from './admin/admin.module';
     MatDialogModule,
     MatTableModule,
     MatButtonModule,
-    AdminModule
+    AdminModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
