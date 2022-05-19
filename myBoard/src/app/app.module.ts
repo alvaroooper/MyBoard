@@ -24,6 +24,7 @@ import { ObjetivosComponent } from './autentificado/objetivos/objetivos.componen
 import { AutentificadoComponent } from './autentificado/autentificado.component';
 import { InicioSesionComponent } from './inicio/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './inicio/registro/registro.component';
+import { ContactoComponent } from './inicio/contacto/contacto.component';
 import { FormularioComponent } from './autentificado/objetivos/formulario/formulario.component';
 import { ObjetivoComponent } from './autentificado/objetivos/objetivo/objetivo.component';
 import { CabeceraUsuarioComponent } from './autentificado/cabecera-usuario/cabecera-usuario.component';
@@ -42,6 +43,7 @@ import { AdminModule } from './admin/admin.module';
     RegistroComponent,
     PortadaComponent,
     ServiciosComponent,
+    ContactoComponent,
     ObjetivosComponent,
     AutentificadoComponent,
     FormularioComponent,

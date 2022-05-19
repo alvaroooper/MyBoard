@@ -1,0 +1,23 @@
+<app-cabecera></app-cabecera>
+<div class="container-fluid" id="con">
+  <div class="row">
+    <div class="col-lg-6" id="inicioSesion">
+      <div class="inicioS">
+        <div id= "tar" class="card border-dark">
+          <div class="card-header"> <br/> <h1 class="titulo"><b>Contacta con Nosotros</b></h1><br/> </div>
+          <div class="card-body text-info">  
+              
+              <form class="card-text" method="post" action="">
+                 
+                <input type="text" id="i1" class="form-control" [(ngModel)]="mensaje.titulo" name="titulo" id="titulo" placeholder="Título"/><br/>
+                <textarea id="i2" class="form-control" [(ngModel)]="mensaje.descripcion" name="descripcion" id="descripcion" placeholder="Descripción"></textarea><br/>
+                <input type="email" id="i1" class="form-control" [(ngModel)]="mensaje.correo" name="correo" id="correo" placeholder="Correo electrónico"/><br/>
+                <input type="button" id="b1" class="btn btn-primary" value="Enviar" (click)="comprobarContacto()"><br/><br/>
+                <hr/><br/><h1><b>Nuestras redes sociales</b></h1><br/>                   
+              </form>
+          </div>
+        </div>    
+      </div>   
+    </div> 
+  </div>
+</div>

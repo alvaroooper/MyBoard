@@ -1,13 +1,13 @@
-
-
+<app-cabecera></app-cabecera>
 <section class="container-fluid">
-  <br/>
-  <h2><button  class="btn btn-light btnAb" (click)="salir()"> <b>&#8678; </b>Salir</button></h2>
+  <br/><br/><br/>
+  
     <article class="row">
       <div class="col-md-1"></div>
       <div class="col-md-5 overflow-auto" >
         <h1><b>Usuarios</b></h1>
-        <table class="table table-striped table-dark">
+        <div *ngIf="usuarios.length != 0 ; else nohayUsuarios">
+          <table class="table table-striped table-dark">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Id</th>
@@ -28,6 +28,8 @@
                 </tr>
             </tbody>
           </table>
+        </div>
+        <ng-template #nohayUsuarios><h1>No hay ningún usuario creado.</h1></ng-template>
       </div>
       
       <div class="col-md-5 overflow-auto" >

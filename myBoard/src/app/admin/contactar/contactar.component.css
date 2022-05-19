@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+}
+section{
+    background: url("/assets/img/fondoAdmin.jpg") no-repeat; /*Foto de: "https://pixabay.com/es/photos/vasos-computadora-port%c3%a1til-tel%c3%a9fono-2947708/*/   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    min-height:100vh;
+
+}
+article{
+    padding-top: 40px;
+}

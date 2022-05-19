@@ -1,0 +1,41 @@
+.titulo{
+    font-size: 250%;
+}
+
+#b1, #b2{
+    width: 100%;
+    font-size: large;
+}
+
+#i1, #i2{
+    font-size: x-large;
+}
+.inicioS{
+    text-align: center;
+    
+}
+textarea{
+    height: 100px;
+}
+#tar{
+    /*background-color: unset;*/
+    background-size: 400%;
+    max-width: 75%;
+   
+    margin-left: 12.5%;
+    border-radius: 3%;
+    box-shadow: 3px 3px 4px 3px;
+}
+
+#inicioSesion{
+    padding-top: 100px;
+    text-align: center;
+}
+
+hr{
+    color: black;
+}
+h1{
+    color: black;
+    font-size: 250%;
+}

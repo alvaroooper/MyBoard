@@ -60,6 +60,7 @@ export class AdministrarComponent implements OnInit {
             }).then((result) => {
               if (result.isConfirmed){
                 this.seleccionarTodosUsuarios()
+                this.seleccionarObjetivos(id)
               }
             })     
           }

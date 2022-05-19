@@ -116,5 +116,19 @@ export class AppService {
   selectRutinaId(id: any) {
     return this.http.get(`${this.url}seleccionarRutinaId.php?id=${id}`);
   }
+
+  
+  /**
+   * METODOS DE CONTACTO
+   */
+  annadirContacto(contacto: any) {
+    return this.http.post(`${this.url}annadirContacto.php`, JSON.stringify(contacto));    
+  }
+  seleecionarMensajes() {
+    return this.http.get(`${this.url}seleccionarMensajes.php`);
+  }
+  eliminarMensaje(id: any) {
+    return this.http.get(`${this.url}eliminarMensaje.php?id=${id}`)
+  }
   
 }
