@@ -41,17 +41,17 @@ aside{
 }
 
 #credenciales{
-    margin-top: -55px;
+    margin-top: -62px;
     margin-left: 20px;
 }
 h1{
-    margin-top: 20px;
     text-align: center;
 }
 
 #salir{
-    margin-left: 25%;
-    width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
 }
 
 #tar{
@@ -61,4 +61,9 @@ h1{
 
 .file-input {
     display: none;
+}
+#fotUsr{
+    height: 40px;
+    border-radius: 15%;
+    margin-right: 5px;
 }

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppService {
 
-  url='http://localhost:80/myBoardBD/'; //Ruta común para todos los PHP
+  url='http://localhost:80/myBoardBD/php/'; //Ruta común para todos los PHP
 
   constructor(private http: HttpClient) { }
 
@@ -45,6 +45,9 @@ export class AppService {
   }
   subirFotoBD(datos:any){
     return this.http.post(`${this.url}subirFotoBD.php`, JSON.stringify(datos)); 
+  }
+  seleccionarFotoBD(id :any){
+    return this.http.get(`${this.url}seleccionarFotoBD.php?id=${id}`);
   }
 
   /**

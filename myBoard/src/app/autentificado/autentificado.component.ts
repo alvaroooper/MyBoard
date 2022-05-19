@@ -24,23 +24,25 @@ export class AutentificadoComponent implements OnInit {
   cambiarContrasenna1!: string
   cambiarContrasenna2!: string
   correo!: string
-  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router, private http: HttpClient) { }
+
+  //Variables para la barra lateral
   asideFlag:boolean=true;
   @ViewChild('aside') aside:any;
+  
+  //url donde estan las fotos del servidor
+  urlFotos = 'http://localhost/myBoardBD/img/';
+  //nombre de la foto seleccionada en el servidor
+  nombreArchivo = '';
+  foto: any
 
-    //url donde estan las fotos del servidor
-    urlFotos = 'http://localhost/sinestesia/contenido/fotos/';
-
-    //archivo
-    nombreArchivo = '';
-    foto: any
+  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router, private http: HttpClient) { }
+  
 
   ngOnInit(): void {
     //Obtener el nombre del usuario
-    this.user = {
-      nombre: this.route.snapshot.params['nombre'],
-    }
+    this.user = {nombre: this.route.snapshot.params['nombre']}
     this.obtenerIdUsuario(this.user.nombre)
+    
   }
 
    //Obtener el id del usurario y cargar los objetivos que le corresponden
@@ -48,6 +50,7 @@ export class AutentificadoComponent implements OnInit {
     this.appService.selectIdUsuario(nombre).subscribe((result:any) => {
       let id = result[0][0]
       this.idUsuario=id
+      this.seleccionarFotoBD(this.idUsuario)
     })
   }
   //Función para mostrar barra lateral al pulsar en el usuario
@@ -126,7 +129,6 @@ export class AutentificadoComponent implements OnInit {
             confirmButtonText: 'Aceptar'
           })
         } else {
-
           this.appService.selectUsuario(this.user.nombre).subscribe((datos:any) => {
             let contrasenna = datos[0][3]
               if (contrasenna == conAct){  
@@ -140,8 +142,7 @@ export class AutentificadoComponent implements OnInit {
                   confirmButtonText: 'Aceptar'
                 })
               } 
-          })
-          
+          })        
         }
       })
     }
@@ -238,7 +239,9 @@ export class AutentificadoComponent implements OnInit {
   }
 
 
-   //subirFoto
+  /**
+   * SUBIR FOTO AL SERVIDOR Y A LA BD
+   */
 
   //subir la foto
   myForm = new FormGroup({
@@ -249,17 +252,14 @@ export class AutentificadoComponent implements OnInit {
   onFileSelected(event: any) {
     //archivo que recojo
     const file: File = event.target.files[0];
-
     if (file) {
       //nombre del archivo
       this.nombreArchivo = file.name;
       //formato
       const formData = new FormData();
-
       formData.append("thumbnail", file);
       //subir el archivo al php
-      const upload$ = this.http.post("http://localhost/myBoardBD/subirFotos.php", formData);
-
+      const upload$ = this.http.post("http://localhost/myBoardBD/php/subirFotos.php", formData);
       upload$.subscribe();
     }
   }
@@ -282,33 +282,33 @@ export class AutentificadoComponent implements OnInit {
    submit() {
     const formData = new FormData();
     formData.append('file', this.myForm.get('fileSource')?.value);
+    this.http.post('http://localhost/myBoardBD/php/subirFotos.php', formData).subscribe((datos: any) => {
+      if (datos['mensaje']) {
 
-    this.http.post('http://localhost/myBoardBD/subirFotos.php', formData)
-      .subscribe((datos: any) => {
-
-
-        if (datos['mensaje']) {
-
-          this.foto = datos['nombreCompleto']
-          let subFot = [this.idUsuario, this.foto]
-          this.appService.subirFotoBD(subFot).subscribe((datos:any) => { 
-            Swal.fire({
-              title: 'Se ha subido su fot de perfil',
-              icon: 'success',
-            })
-          })
-         
-
-        } else {
-
+        this.foto = datos['nombreCompleto']
+        let subFot = [this.idUsuario, this.foto]
+        this.appService.subirFotoBD(subFot).subscribe((datos:any) => { 
           Swal.fire({
-            icon: 'error',
-            title: 'El archivo debe ser una imagen'
+            title: 'Se ha subido su fot de perfil',
+            icon: 'success',
           })
-        }
-
-      })
+        })
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'El archivo debe ser una imagen'
+        })
+      }
+    })
   }
 
+  //Seleccionar foto
+  seleccionarFotoBD(id: string){
+    this.appService.seleccionarFotoBD(id).subscribe((result:any) => {      
+      this.foto = result[0][0]
+      console.log(this.foto);
+      
+    })
+  }
 }
  

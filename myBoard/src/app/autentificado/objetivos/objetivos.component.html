@@ -1,10 +1,13 @@
+
 <main class="container-fluid" id ="a">
+
     <div class="row"> 
+        
         <div class="col-md-4" >
             <app-formulario (outputObjetivos)="selectObjetivos()" [nombre]="valor" ></app-formulario>
         </div>
 
-        <div class="col-md-8 overflow-auto" id="obs">
+        <div class="col-md-8" id="obs">
             <h1><u>Objetivos actuales:</u></h1>  
             
             <mat-tab-group mat-align-tabs="center" class="t" >
