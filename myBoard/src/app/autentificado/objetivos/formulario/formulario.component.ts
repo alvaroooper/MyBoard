@@ -99,7 +99,7 @@ export class FormularioComponent implements OnInit {
       this.metodoDeId = result
       Swal.fire({
         title: this.metodoDeId[0][1],
-        text: this.metodoDeId[0][2],
+        html: "<b>Descripción: </b>"+this.metodoDeId[0][2],
         icon: 'info',
         confirmButtonText: 'Aceptar'
       })
@@ -126,6 +126,7 @@ export class FormularioComponent implements OnInit {
       this.recompensaDeId = result
       Swal.fire({
         title: this.recompensaDeId[0][1],
+        html: "<b>Lugar: </b>"+this.recompensaDeId[0][2]+ "<br/> <b>Cantidad: </b>"+this.recompensaDeId[0][3],
         text: this.recompensaDeId[0][2],
         icon: 'info',
         confirmButtonText: 'Aceptar'
@@ -152,7 +153,7 @@ export class FormularioComponent implements OnInit {
       this.rutinaDeId = result
       Swal.fire({
         title: this.rutinaDeId[0][1],
-        text: this.rutinaDeId[0][2],
+        html: "<b>Lugar: </b>"+this.rutinaDeId[0][2]+"<br/> <b>Dificultad: </b>"+ this.rutinaDeId[0][3] + "<br/> <b>Descripción: </b>"+this.rutinaDeId[0][4],
         icon: 'info',
         confirmButtonText: 'Aceptar'
       })
@@ -212,6 +213,7 @@ export class FormularioComponent implements OnInit {
     }
   }
 
+
   //Recoge una fecha y devuelve un string con la fecha en formato español
   fEspanna(fecha: Date){
     let dias = ['Domingo','Lunes','Martes','Miércoles', 'Jueves', 'Viernes', 'Sábado'];
@@ -222,6 +224,7 @@ export class FormularioComponent implements OnInit {
 
     return nomDiaSem + ", " + fecha.getDate() + " de " + nomMes + " de " + fecha.getFullYear();
   }
+  
 
   //Inserta un nuevo objetivo en la BD
   insertObjetivo(objetivo: any) {

@@ -46,16 +46,16 @@ export class ObjetivoAcademicoComponent implements OnInit {
     let id = this.valor["idMet"]
     this.seleccionarMetodoId(id)
   }
-  //Obtiene el metodo correspondiente a un ID
+  //Obtiene el metodo correspondiente a un ID y lo muestra
   seleccionarMetodoId(id: any){
     this.appService.selectMetodoId(id).subscribe((result:any) => {  
       this.metodoDeId = result
       Swal.fire({
         title: this.metodoDeId[0][1],
-        text: this.metodoDeId[0][2],
+        html: "<b>Descripción: </b>"+this.metodoDeId[0][2],
         icon: 'info',
         confirmButtonText: 'Aceptar'
-      })   
+      }) 
     })
   }
  

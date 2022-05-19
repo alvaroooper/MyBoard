@@ -52,10 +52,11 @@ export class ObjetivoPersonalComponent implements OnInit {
       console.log(this.recompensaDeId);
       Swal.fire({
         title: this.recompensaDeId[0][1],
+        html: "<b>Lugar: </b>"+this.recompensaDeId[0][2]+ "<br/> <b>Cantidad: </b>"+this.recompensaDeId[0][3],
         text: this.recompensaDeId[0][2],
         icon: 'info',
         confirmButtonText: 'Aceptar'
-      }) 
+      })  
     })
   }
 

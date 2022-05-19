@@ -51,7 +51,7 @@ seleccionarRutinaId(id: any){
     this.rutinaDeId = result
     Swal.fire({
       title: this.rutinaDeId[0][1],
-      text: this.rutinaDeId[0][2],
+      html: "<b>Lugar: </b>"+this.rutinaDeId[0][2]+"<br/> <b>Dificultad: </b>"+ this.rutinaDeId[0][3] + "<br/> <b>Descripción: </b>"+this.rutinaDeId[0][4],
       icon: 'info',
       confirmButtonText: 'Aceptar'
     })

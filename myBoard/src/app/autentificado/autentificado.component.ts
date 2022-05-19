@@ -289,14 +289,14 @@ export class AutentificadoComponent implements OnInit {
         let subFot = [this.idUsuario, this.foto]
         this.appService.subirFotoBD(subFot).subscribe((datos:any) => { 
           Swal.fire({
-            title: 'Se ha subido su fot de perfil',
+            title: 'Se ha cambiado su foto de perfil',
             icon: 'success',
           })
         })
       } else {
         Swal.fire({
+          title: 'El archivo debe ser una imagen',
           icon: 'error',
-          title: 'El archivo debe ser una imagen'
         })
       }
     })
