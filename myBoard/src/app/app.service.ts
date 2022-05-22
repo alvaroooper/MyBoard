@@ -56,19 +56,19 @@ export class AppService {
 
   /*Seleccionar Objetivos*/
   selectObjetivos(idUsuario: any) {
-    return this.http.get(`${this.url}selectObjetivos.php?idUsuario=${idUsuario}`);
+    return this.http.get(`${this.url}seleccionarObjetivos.php?idUsuario=${idUsuario}`);
   }
   selectObjetivosAcademicos(idUsuario: any) {
-    return this.http.get(`${this.url}selectObjetivosAcademicos.php?idUsuario=${idUsuario}`);
+    return this.http.get(`${this.url}seleccionarObjetivosAcademicos.php?idUsuario=${idUsuario}`);
   }
   selectObjetivosPersonales(idUsuario: any) {
-    return this.http.get(`${this.url}selectObjetivosPersonales.php?idUsuario=${idUsuario}`);
+    return this.http.get(`${this.url}seleccionarObjetivosPersonales.php?idUsuario=${idUsuario}`);
   }
   selectObjetivosFisicos(idUsuario: any) {
-    return this.http.get(`${this.url}selectObjetivosFisicos.php?idUsuario=${idUsuario}`);
+    return this.http.get(`${this.url}seleccionarObjetivosFisicos.php?idUsuario=${idUsuario}`);
   }
   selectObjetivosCompletados(idUsuario: any) {
-    return this.http.get(`${this.url}selectObjetivosCompletados.php?idUsuario=${idUsuario}`);
+    return this.http.get(`${this.url}seleccionarObjetivosCompletados.php?idUsuario=${idUsuario}`);
   }
   /*Insertar Objetivos*/
   insertObjetivo(objetivo: any) {
@@ -97,13 +97,13 @@ export class AppService {
    * METODOS DE AYUDAS PARA OBJETIVOS
    */
   selectMetodos() {
-    return this.http.get(`${this.url}selectMetodos.php`);
+    return this.http.get(`${this.url}seleccionarMetodos.php`);
   }
   selectRecompensas() {
-    return this.http.get(`${this.url}selectRecompensas.php`);
+    return this.http.get(`${this.url}seleccionarRecompensas.php`);
   }
   selectRutinas() {
-    return this.http.get(`${this.url}selectRutinas.php`);
+    return this.http.get(`${this.url}seleccionarRutinas.php`);
   }
   
   /*Seleccionar ayuda dado un ID */

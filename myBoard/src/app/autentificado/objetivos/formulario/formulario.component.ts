@@ -126,7 +126,7 @@ export class FormularioComponent implements OnInit {
       this.recompensaDeId = result
       Swal.fire({
         title: this.recompensaDeId[0][1],
-        html: "<b>Lugar: </b>"+this.recompensaDeId[0][2]+ "<br/> <b>Cantidad: </b>"+this.recompensaDeId[0][3],
+        html: "<b>Se obtiene con: </b>"+this.recompensaDeId[0][2]+ "<br/> <b>Cantidad: </b>"+this.recompensaDeId[0][3],
         text: this.recompensaDeId[0][2],
         icon: 'info',
         confirmButtonText: 'Aceptar'

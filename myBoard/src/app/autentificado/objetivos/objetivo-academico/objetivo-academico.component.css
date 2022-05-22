@@ -20,3 +20,8 @@
 .btnAb{
     margin-left: 7%;
 }
+@media only screen and (max-width: 600px) {
+    .btnAb{
+        margin-left: 5px;
+    }
+  }
