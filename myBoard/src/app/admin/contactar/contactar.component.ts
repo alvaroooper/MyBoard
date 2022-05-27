@@ -15,6 +15,7 @@ export class ContactarComponent implements OnInit {
     this.seleecionarMensajes()
   }
 
+  //Selecciona los mensajes escritos por los clientes de la  aplicación
   seleecionarMensajes() {
     this.appService.seleecionarMensajes().subscribe((result:any) => {
       this.mensajes = result
@@ -23,6 +24,7 @@ export class ContactarComponent implements OnInit {
     });
   }
 
+  //Elimina el mensaje en el que se encuentra el botón de borrar
   eliminarMensaje(id: any){
     //Pregunta borrar
     Swal.fire({

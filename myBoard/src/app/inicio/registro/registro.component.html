@@ -7,10 +7,10 @@
           <div class="card-header"> <br/> <h1 class="titulo"><b>Crear cuenta</b></h1><br/> </div>
           <div class="card-body text-info">
               <form class="card-text" method="post" action="">
-                <input type="text" id="i1" class="form-control" [(ngModel)]="usr.nombre" name="nombre" id="nombre" placeholder="Nombre (1-20 caracteres)"/><br/>               
+                <input type="text" id="i1" class="form-control" [(ngModel)]="usr.nombre" name="nombre" id="nombre" minlength="1" maxlength="20" placeholder="Nombre (1-20 caracteres)"/><br/>               
                 <input type="email" id="i2" class="form-control" [(ngModel)]="usr.correo" name="correo" id="contrasenna2" placeholder="Correo electrónico"/><br/>
-                <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" placeholder="Contraseña (5-15 caracteres)"/><br/>
-                <input type="password" id="i2" class="form-control" [(ngModel)]="comprobar.contrasenna" name="contrasenna2" id="contrasenna2" placeholder="Repita la Contraseña"/><br/>
+                <input type="password" id="i2" class="form-control" [(ngModel)]="usr.contrasenna" name="contrasenna" id="contrasenna" minlength="5" maxlength="30" placeholder="Contraseña (5-30 caracteres)"/><br/>
+                <input type="password" id="i2" class="form-control" [(ngModel)]="comprobar.contrasenna" name="contrasenna2" id="contrasenna2"  minlength="5" maxlength="30" placeholder="Repita la Contraseña"/><br/>
                 <input type="button" id="b1" class="btn btn-primary" value="Registrarse" (click)="comprobarRegistro()"><br/><br/>
                 <hr/>
                 <h1><b>¿Ya tienes cuenta?</b></h1>

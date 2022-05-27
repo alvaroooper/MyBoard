@@ -13,6 +13,7 @@ export class CabeceraComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Volver a la página de la portada
   salir(){
     this.router.navigate([`/portada`]) 
   }

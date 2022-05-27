@@ -42,11 +42,13 @@ export class ObjetivoComponent implements OnInit {
     this.abandonarObjetivo(id)
     this.selectObjetivo(this.idUsuario)
   }
+  //Recoge el id del objetivo a completar y llama a la funcion de completar
   recogerObjetivoCompletar(){
     let id = this.valor.id
     this.completarObjetivo(id)
     this.selectObjetivo(this.idUsuario)
   }
+  //Obtiene el id de un usuario dado el nombre
   obtenerIdUsuario(nombre: string){
     this.appService.selectIdUsuario(nombre)
     .subscribe((result:any) => {

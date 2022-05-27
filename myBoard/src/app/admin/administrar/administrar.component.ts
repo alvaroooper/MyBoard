@@ -20,6 +20,7 @@ export class AdministrarComponent implements OnInit {
     this.seleccionarTodosUsuarios()
   }
 
+  //Obtiene todos los usuarios y lo guarda en un array
   seleccionarTodosUsuarios() {
     this.appService.selectTodosUsuarios().subscribe((result:any) => {
       this.usuarios = result
@@ -27,6 +28,7 @@ export class AdministrarComponent implements OnInit {
     });
   }
 
+  //Selecciona todos los objetivos dado el id de un usuario
   seleccionarObjetivos(id: any){
     this.idUsuario = id
     this.verOb = true
@@ -34,6 +36,8 @@ export class AdministrarComponent implements OnInit {
       this.objetivosUsr = datos
     })
   }
+
+  //Elimina el usuario en el que se encuentra el botón de eliminar
   eliminarUsuario(id: any){
     //Pregunta borrar
     Swal.fire({
@@ -69,6 +73,7 @@ export class AdministrarComponent implements OnInit {
     }) 
   }
 
+  //Elimina el objetivo seleecionado del usuario seleccionado previamente
   eliminarObjetivo(id: any) {
     //Pregunta borrar
     Swal.fire({
@@ -102,6 +107,7 @@ export class AdministrarComponent implements OnInit {
       }
     })   
   }
+  //Volver a la página de la portada
   salir(){
     this.router.navigate([`/portada`]) 
   }

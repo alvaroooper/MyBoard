@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import{Plugin,Capacitor,Plugins}from'@capacitor/core';
+import{CameraResultType,CameraSource,CameraPhoto}from '@capacitor/camera';
+import{FilesystemDirectory}from'@capacitor/filesystem';
+const{Camera,Filesystem,Storage}=Plugins;
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AppService {
 
   url='http://localhost:80/myBoardBD/php/'; //Ruta común para todos los PHP
@@ -24,19 +30,21 @@ export class AppService {
   selectUsuarioCorreo(correo: any) {
     return this.http.get(`${this.url}seleccionarUsuarioCorreo.php?correo=${correo}`);
   }
-  /*Insertar Usuarios*/
-  insertUsuario(usuario:any) {
-    return this.http.post(`${this.url}annadirUsuario.php`, JSON.stringify(usuario));    
-  }
   selectIdUsuario(nombre: any){
     return this.http.get(`${this.url}seleccionarIdUsuario.php?nombre=${nombre}`)
   }
   selectTodosUsuarios() {
     return this.http.get(`${this.url}seleccionarTodosUsuarios.php`);
   }
+  /*Insertar Usuarios*/
+  insertUsuario(usuario:any) {
+    return this.http.post(`${this.url}annadirUsuario.php`, JSON.stringify(usuario));    
+  }
+  /*Eliminar usuario*/
   eliminarUsuario(id: any) {
     return this.http.get(`${this.url}eliminarUsuario.php?id=${id}`)
   }
+  /*Cambiar datos del usuario*/
   cambiarContrasenna(datos:any){
     return this.http.post(`${this.url}cambiarContrasenna.php`, JSON.stringify(datos));    
   }
@@ -130,5 +138,15 @@ export class AppService {
   eliminarMensaje(id: any) {
     return this.http.get(`${this.url}eliminarMensaje.php?id=${id}`)
   }
-  
+
+  /**
+   * METODOS DE SACAR FOTO
+   */
+   public async addPhoto(){
+      const capturedPhoto=await Camera['getPhoto']({
+        resultType:CameraResultType.Uri,
+        source:CameraSource.Camera,
+        quality:100
+      });
+    }
 }

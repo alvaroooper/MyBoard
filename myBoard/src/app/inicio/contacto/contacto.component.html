@@ -9,9 +9,9 @@
               
               <form class="card-text" method="post" action="">
                  
-                <input type="text" id="i1" class="form-control" [(ngModel)]="mensaje.titulo" name="titulo" id="titulo" placeholder="Título"/><br/>
-                <textarea id="i2" class="form-control" [(ngModel)]="mensaje.descripcion" name="descripcion" id="descripcion" placeholder="Descripción"></textarea><br/>
-                <input type="email" id="i1" class="form-control" [(ngModel)]="mensaje.correo" name="correo" id="correo" placeholder="Correo electrónico"/><br/>
+                <input type="text" id="i1" class="form-control" [(ngModel)]="mensaje.titulo" name="titulo" id="titulo" placeholder="Título" maxlength="40"/><br/>
+                <textarea id="i2" class="form-control" [(ngModel)]="mensaje.descripcion" name="descripcion" id="descripcion" placeholder="Descripción" maxlength="200"></textarea><br/>
+                <input type="email" id="i1" class="form-control" [(ngModel)]="mensaje.correo" name="correo" id="correo" placeholder="Correo electrónico" maxlength="50"/><br/>
                 <input type="button" id="b1" class="btn btn-primary" value="Enviar" (click)="comprobarContacto()"><br/><br/>
                 <hr/><br/><h1><b>Nuestras redes sociales</b></h1><br/>                   
               </form>

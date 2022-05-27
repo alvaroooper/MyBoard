@@ -5,6 +5,9 @@ import { AppService } from 'src/app/app.service';
 import {Md5} from 'ts-md5/dist/md5';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import{Camera,CameraResultType,CameraSource}from'@capacitor/camera';
+import{DomSanitizer,SafeResourceUrl}from'@angular/platform-browser';
+
 
 //formulario
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -25,6 +28,8 @@ export class AutentificadoComponent implements OnInit {
   cambiarContrasenna2!: string
   correo!: string
 
+  public dataUrlImage: any;
+  photo!:SafeResourceUrl;
   //Variables para la barra lateral
   asideFlag:boolean=true;
   @ViewChild('aside') aside:any;
@@ -35,13 +40,17 @@ export class AutentificadoComponent implements OnInit {
   nombreArchivo = '';
   foto: any
 
-  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router, private http: HttpClient) { }
+  //Variables para camara
+  
+  constructor(private route: ActivatedRoute, private appService: AppService, private router: Router, private http: HttpClient, private sanitizer:DomSanitizer) { }
   
 
   ngOnInit(): void {
     //Obtener el nombre del usuario
     this.user = {nombre: this.route.snapshot.params['nombre']}
     this.obtenerIdUsuario(this.user.nombre)
+    this.dataUrlImage=localStorage.getItem('photo')
+
     
   }
 
@@ -249,6 +258,7 @@ export class AutentificadoComponent implements OnInit {
     fileSource: new FormControl('', [Validators.required])
   });
 
+  //Funcion realizada al seleccionar un archivo para subir
   onFileSelected(event: any) {
     //archivo que recojo
     const file: File = event.target.files[0];
@@ -263,7 +273,7 @@ export class AutentificadoComponent implements OnInit {
       upload$.subscribe();
     }
   }
-  //falta el archivo
+  //valor retornado en caso de que falte el archivo
   get f() {
     return this.myForm.controls;
   }
@@ -281,13 +291,15 @@ export class AutentificadoComponent implements OnInit {
    //subir la foto
    submit() {
     const formData = new FormData();
+    console.log(this.myForm.get('fileSource')?.value);
+    
     formData.append('file', this.myForm.get('fileSource')?.value);
     this.http.post('http://localhost/myBoardBD/php/subirFotos.php', formData).subscribe((datos: any) => {
       if (datos['mensaje']) {
 
         this.foto = datos['nombreCompleto']
         let subFot = [this.idUsuario, this.foto]
-        this.appService.subirFotoBD(subFot).subscribe((datos:any) => { 
+        this.appService.subirFotoBD(subFot).subscribe((datos:any) => { //Lamar al servicio de subi fotos
           Swal.fire({
             title: 'Se ha cambiado su foto de perfil',
             icon: 'success',
@@ -306,9 +318,38 @@ export class AutentificadoComponent implements OnInit {
   seleccionarFotoBD(id: string){
     this.appService.seleccionarFotoBD(id).subscribe((result:any) => {      
       this.foto = result[0][0]
-      console.log(this.foto);
-      
     })
   }
+
+  //Sacar foto con la camara del dispositivo
+/*
+  async takePicture(){
+
+    const image=await Camera.getPhoto({
+      quality:100,
+      allowEditing:false,
+      resultType:CameraResultType.Uri,
+      source:CameraSource.Camera
+    });
+    this.dataUrlImage=image;
+    console.log(this.dataUrlImage);
+    
+    
+    var imageUrl = image.webPath;
+    this.foto = imageUrl
+  console.log(imageUrl);
+  
+    this.dataUrlImage=image.dataUrl;
+    localStorage.setItem('photo',this.dataUrlImage)
+    const body={
+      photo:this.dataUrlImage,
+      id:this.idUsuario
+    }
+    this.photo=this.sanitizer.bypassSecurityTrustResourceUrl(image &&(this.dataUrlImage))
+
+  }     
+  */
 }
+
+
  

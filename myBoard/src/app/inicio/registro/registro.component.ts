@@ -72,7 +72,7 @@ export class RegistroComponent implements OnInit {
                   if (this.validarContrasenna(con) == false) { //Comprobar complejidad contraseña
                     Swal.fire({
                       title: 'Contraseña no válida',
-                      text: 'La contraseña debe tener entre 5 y 15 caracteres',
+                      text: 'La contraseña debe tener entre 5 y 30 caracteres',
                       icon: 'error',
                       confirmButtonText: 'Aceptar'
                     })         
