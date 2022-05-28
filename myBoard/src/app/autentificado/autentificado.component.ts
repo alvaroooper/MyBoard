@@ -84,7 +84,7 @@ export class AutentificadoComponent implements OnInit {
     if (this.validarContrasenna(this.cambiarContrasenna1) == false) { //Comprobar complejidad contraseña
       Swal.fire({
         title: 'Contraseña no válida',
-        text: 'La contraseña debe tener entre 5 y 15 caracteres',
+        text: 'La contraseña debe tener entre 5 y 30 caracteres',
         icon: 'error',
         confirmButtonText: 'Aceptar'
       })         
@@ -160,7 +160,7 @@ export class AutentificadoComponent implements OnInit {
   //Comprobar los requisitos de complejidad de la contraseña
   validarContrasenna(con: string){
     let valida = false
-    if(con.length >= 5 && con.length <= 15){
+    if(con.length >= 5 && con.length <= 30){
       valida = true
     }
     return valida;

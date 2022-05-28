@@ -114,7 +114,7 @@ export class RegistroComponent implements OnInit {
   //Comprobar los requisitos de complejidad de la contraseña
   validarContrasenna(con: string){
     let valida = false
-    if(con.length >= 5 && con.length <= 15){
+    if(con.length >= 5 && con.length <= 30){
       valida = true
     }
     return valida;
