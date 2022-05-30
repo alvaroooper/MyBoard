@@ -35,7 +35,7 @@ export class AutentificadoComponent implements OnInit {
   @ViewChild('aside') aside:any;
   
   //url donde estan las fotos del servidor
-  urlFotos = 'http://localhost/myBoardBD/img/';
+  urlFotos = 'http://myboard.site/myBoardBD/img/';
   //nombre de la foto seleccionada en el servidor
   nombreArchivo = '';
   foto: any
@@ -269,7 +269,7 @@ export class AutentificadoComponent implements OnInit {
       const formData = new FormData();
       formData.append("thumbnail", file);
       //subir el archivo al php
-      const upload$ = this.http.post("http://localhost/myBoardBD/php/subirFotos.php", formData);
+      const upload$ = this.http.post("http://myboard.site/myBoardBD/php/subirFotos.php", formData);
       upload$.subscribe();
     }
   }
@@ -294,7 +294,7 @@ export class AutentificadoComponent implements OnInit {
     console.log(this.myForm.get('fileSource')?.value);
     
     formData.append('file', this.myForm.get('fileSource')?.value);
-    this.http.post('http://localhost/myBoardBD/php/subirFotos.php', formData).subscribe((datos: any) => {
+    this.http.post('http://myboard.site/myBoardBD/php/subirFotos.php', formData).subscribe((datos: any) => {
       if (datos['mensaje']) {
 
         this.foto = datos['nombreCompleto']

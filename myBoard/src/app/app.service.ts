@@ -12,7 +12,7 @@ const{Camera,Filesystem,Storage}=Plugins;
 
 export class AppService {
 
-  url='http://localhost:80/myBoardBD/php/'; //Ruta común para todos los PHP
+  url='http://myboard.site:80/myBoardBD/php/'; //Ruta común para todos los PHP
 
   constructor(private http: HttpClient) { }
 
